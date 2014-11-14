@@ -1,0 +1,27 @@
+#+TITLE:     第1章 游戏之乐
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-10
+#+DESCRIPTION: 编程之美笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./index.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/emacs.css" />
+
+* 1.1 CPU曲线
+进程空循环时占用CPU，sleep时CPU空闲。通过循环控制CPU的使用率，使CPU占用曲线变化。
+
+* 1.2 中国象棋将帅问题
+- 位操作
+  + 用位操作在一个字节上表示两个变量
+- 位域的概念（TCPL）
+  + 一个结构体里，每个变量用若干位数表示，而不是整个变量，节省空间
+
+* 1.3 烙饼排序
