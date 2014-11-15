@@ -1,0 +1,37 @@
+#+TITLE:     第2章 数字之魅
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-15
+#+DESCRIPTION: 编程之美笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./index.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/emacs.css" />
+
+* 2.1 求二进制数中的位数
+1. 求模或位操作
+2. v &= (v - 1)，每次消掉最低位的1
+   - 同样可以用来计算一个数是否为2的方幂
+3. 查表：预先计算出结果存在数组中，直接查
+
+* 2.2 不要被阶乘吓到
+问题：
+1. 阶乘N!的末尾有多少个0？
+   - 求因子5的个数
+2. 阶乘N!的二进制中最低位1的位置？
+   - 求因子2的个数
+
+* 2.3 寻找发贴水王
+1. 如果已排序：中间的ID是数量超过一半的ID
+2. 遍历一遍，更新当前记录的ID和次数
+
+计算机科学的普遍思想：将一个问题转化为规模较小的若干个问题，如分治，递推，贪心。在转化过程中，小的问题跟原文题基本一致。
+
+* 2.4 1的数目
