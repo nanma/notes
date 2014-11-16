@@ -161,33 +161,42 @@
     border: none;
   } */
   table {
-	  margin-top: 1em;
+	  /*margin-top: 1em;
 	  margin-bottom: 1em;
-	  border: 0;
+	  border: 0;*/
+          margin-top:10px;
+          border-collapse:collapse;
+          border:1px solid #AAA;
   }
 
   td {
 	  font-size: 14px;
-	  border-left: ButtonHighlight 1px solid;
+/*	  border-left: ButtonHighlight 1px solid;
 	  border-right: ButtonShadow 1px solid;
 	  border-top: ButtonHighlight 1px solid;
-	  border-bottom: ButtonShadow 1px solid;
+	  border-bottom: ButtonShadow 1px solid; */
+          border: 1px solid #aaa;
 	  padding-left: 3px;
 	  padding-right: 2px;
-	  overflow: hidden;
-	  background: #ddeecc;
+/*	  overflow: hidden;
+	  background: #ddeecc;*/
+          background: #d8d1c9;
+          vertical-align: inherit;
   }
 
   th {
 	  font-size: 14px;
-	  border-left: ButtonHighlight 1px solid;
+/*	  border-left: ButtonHighlight 1px solid;
 	  border-right: ButtonShadow 1px solid;
 	  border-top: ButtonHighlight 1px solid;
-	  border-bottom: ButtonShadow 1px solid;
+	  border-bottom: ButtonShadow 1px solid;*/
+          border: 1px solid #aaa;
 	  padding-left: 3px;
 	  padding-right: 2px;
-	  overflow: hidden;
-	  background: #eeeecc;
+/*	  overflow: hidden;*/
+	  background: #c3b8ab;
+          color: #232323;
+          vertical-align: inherit;
   }
 
   code {
