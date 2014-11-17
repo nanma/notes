@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>第2章 数字之魅</title>
-<!-- 2014-11-16 日 15:14 -->
+<!-- 2014-11-17 一 11:23 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -160,6 +160,8 @@ for the JavaScript code in this tag.
 <li><a href="#sec-8">2.12 快速找到满足条件的两个数</a></li>
 <li><a href="#sec-9">2.13 子数组的最大乘积</a></li>
 <li><a href="#sec-10">2.14 求数组的子数组之和的最大值</a></li>
+<li><a href="#sec-11">2.15 字数组之和的最大值（二维）</a></li>
+<li><a href="#sec-12">2.16 求数组中最长递增自序列</a></li>
 </ul>
 </div>
 </div>
@@ -312,7 +314,7 @@ for the JavaScript code in this tag.
 <h2 id="sec-10">2.14 求数组的子数组之和的最大值</h2>
 <div class="outline-text-2" id="text-10">
 <p>
-先考虑各种可能输入。
+先考虑各种可能输入，确定题意。
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -346,12 +348,32 @@ for the JavaScript code in this tag.
 </table>
 </div>
 </div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">2.15 字数组之和的最大值（二维）</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>用部分和优化矩阵求和的过程——用已经计算出来的结果计算新结果。
+</li>
+<li>枚举上下边，用一维情况计算左右边
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">2.16 求数组中最长递增自序列</h2>
+<div class="outline-text-2" id="text-12">
+<ol class="org-ol">
+<li>动态规划：根据前面子数组计算后面结果
+</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2014-11-15</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2014-11-16 日 15:14</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2014-11-17 一 11:23</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
