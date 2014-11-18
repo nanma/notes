@@ -1,0 +1,36 @@
+#+TITLE:     第3章 结构之法
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-17
+#+DESCRIPTION: 编程之美笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./index.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/emacs.css" />
+
+* 3.1 字符串移位包含的问题
+空间换时间
+
+* 3.3 计算字符串的相似度(编辑距离)
+分情况讨论:把问题转化成规模较小的同样的问题。
+
+* 3.4 从无头单链表中删除节点
+删除下一个节点，并替换节点值。
+
+* 3.6 判断两个链表是否相交
+1. hash
+2. 头连接尾
+3. 判断尾节点是否相同
+
+* 3.7 队列中取最大值的问题
+1. 用最大堆实现，节点增加指针实现队列功能
+2. 用双栈实现队列，栈中维护最大值
+* 3.8 求二叉树中节点的最大距离
+
