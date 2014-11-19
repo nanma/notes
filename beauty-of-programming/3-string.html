@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>第1章 游戏之乐</title>
+<title>第3章 结构之法</title>
 <!-- 2014-11-19 三 10:16 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
@@ -145,148 +145,103 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="http://manan.org"> HOME </a>
 </div><div id="content">
-<h1 class="title">第1章 游戏之乐</h1>
+<h1 class="title">第3章 结构之法</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1.1 CPU曲线</a></li>
-<li><a href="#sec-2">1.2 中国象棋将帅问题</a></li>
-<li><a href="#sec-3">1.3 烙饼排序</a></li>
-<li><a href="#sec-4">1.4 买书问题</a></li>
-<li><a href="#sec-5">1.5 快速找出故障机器</a></li>
-<li><a href="#sec-6">1.9 高效地安排会面</a>
-<ul>
-<li><a href="#sec-6-1">面试点数量</a></li>
-</ul>
-</li>
-<li><a href="#sec-7">1.10 双线程高效下载</a></li>
-<li><a href="#sec-8">1.14 连连看游戏设计</a></li>
-<li><a href="#sec-9">1.16 24点游戏</a></li>
+<li><a href="#sec-1">3.1 字符串移位包含的问题</a></li>
+<li><a href="#sec-2">3.3 计算字符串的相似度(编辑距离)</a></li>
+<li><a href="#sec-3">3.4 从无头单链表中删除节点</a></li>
+<li><a href="#sec-4">3.6 判断两个链表是否相交</a></li>
+<li><a href="#sec-5">3.7 队列中取最大值的问题</a></li>
+<li><a href="#sec-6">3.8 求二叉树中节点的最大距离</a></li>
+<li><a href="#sec-7">3.9 重建二叉树</a></li>
+<li><a href="#sec-8">3.10 分层遍历二叉树</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">1.1 CPU曲线</h2>
+<h2 id="sec-1">3.1 字符串移位包含的问题</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-进程空循环时占用CPU，sleep时CPU空闲。通过循环控制CPU的使用率，使CPU占用曲线变化。
+空间换时间
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">1.2 中国象棋将帅问题</h2>
+<h2 id="sec-2">3.3 计算字符串的相似度(编辑距离)</h2>
 <div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>位操作
-<ul class="org-ul">
-<li>用位操作在一个字节上表示两个变量
-</li>
-</ul>
-</li>
-<li>位域的概念（TCPL）
-<ul class="org-ul">
-<li>一个结构体里，每个变量用若干位数表示，而不是整个变量，节省空间
-</li>
-</ul>
-</li>
-</ul>
+<p>
+分情况讨论:把问题转化成规模较小的同样的问题。
+</p>
 </div>
 </div>
 
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">1.3 烙饼排序</h2>
+<h2 id="sec-3">3.4 从无头单链表中删除节点</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-递归遍历所有的排序方法，不断更新上界。
-</p>
-
-<p>
-用下界来剪枝，排除大量冗余方案。
+删除下一个节点，并替换节点值。
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">1.4 买书问题</h2>
+<h2 id="sec-4">3.6 判断两个链表是否相交</h2>
 <div class="outline-text-2" id="text-4">
-<p>
-动态规划，在若干个子问题中选最优，递归解子问题。
-</p>
+<ol class="org-ol">
+<li>hash
+</li>
+<li>头连接尾
+</li>
+<li>判断尾节点是否相同
+</li>
+</ol>
 </div>
 </div>
 
 <div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">1.5 快速找出故障机器</h2>
+<h2 id="sec-5">3.7 队列中取最大值的问题</h2>
 <div class="outline-text-2" id="text-5">
-<p>
-一台机器：异或一遍。
-</p>
-
-<p>
-两台机器：异或后，根据结果把所有机器分成两类，回到一台机器的问题。
-</p>
+<ol class="org-ol">
+<li>用最大堆实现，节点增加指针实现队列功能
+</li>
+<li>用双栈实现队列，栈中维护最大值
+</li>
+</ol>
 </div>
 </div>
-
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">1.9 高效地安排会面</h2>
+<h2 id="sec-6">3.8 求二叉树中节点的最大距离</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-最小着色问题。
-</p>
-</div>
-<div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1">面试点数量</h3>
-<div class="outline-text-3" id="text-6-1">
-<p>
-区间图，不断增加颜色数量到满足需要的值为止。
+递归计算当前根节点到叶子的最大距离,更新全局最大距离
 </p>
 </div>
 </div>
-</div>
-
 <div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">1.10 双线程高效下载</h2>
+<h2 id="sec-7">3.9 重建二叉树</h2>
 <div class="outline-text-2" id="text-7">
 <p>
-线程，信号量，锁。
+根据前序和中序遍历.
 </p>
 </div>
 </div>
-
 <div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">1.14 连连看游戏设计</h2>
+<h2 id="sec-8">3.10 分层遍历二叉树</h2>
 <div class="outline-text-2" id="text-8">
-<ul class="org-ul">
-<li>游戏局面的状态描述：自动机。
-</li>
-<li>找最短路径（判断是否可消除）：广度优先搜索，从转弯数少的点向远处扩展
-<ul class="org-ul">
-<li>记录父节点，就可以回溯路径
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">1.16 24点游戏</h2>
-<div class="outline-text-2" id="text-9">
-<ul class="org-ul">
-<li>解法一：穷举，每次取两个元素出来，计算出可能结果放回集合，进行递归，计算出结果就返回。
-</li>
-<li>解法二：定义两个集合的Fork运算，计算它们可能的组合结果。计算冗余量比一小，但无法得到算式。
-</li>
-</ul>
+<p>
+<b>每一层在同一行输出</b>
+在队列中用cur和last指针标记当前层
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2014-11-10</p>
+<p class="date">Date: 2014-11-17</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
 <p class="date">Created: 2014-11-19 三 10:16</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
