@@ -1,12 +1,12 @@
-#+TITLE:     第4章 数学之趣
+#+TITLE:     剑指offer
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-11-19
-#+DESCRIPTION: 编程之美笔记
+#+DESCRIPTION: 剑指offer笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
 #+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+OPTIONS: ^:{} #不对下划线_进行直接转义
 #+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
@@ -15,6 +15,21 @@
 #+HTML_LINK_UP: ./index.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
-* 4.6 桶中去白球
-异或
-* 4.8 三角形测试用例
+* 1. 赋值运算符函数
+C++基础
+* 2. 实现Singleton模式
+设计模式
+* 3. 二维数组中的查找
+每次消掉一行或一列,达到线性复杂度.
+* 4. 替换空格
+从后往前
+* 5. 从尾到头打印链表
+递归
+* 6. 重建二叉树
+同编程之美3.9
+* 7. 用两个栈实现队列
+老问题
+* 8. 查找旋转数组的最小数字
+二分查找的变形.
+* 9. 斐波那契数列
+

@@ -13,7 +13,7 @@
 #+EXPORT_EXCLUDE_TAGS: no-export
 #+HTML_LINK_HOME: http://manan.org
 #+HTML_LINK_UP: ./index.html
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/emacs.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
 * 3.1 字符串移位包含的问题
 空间换时间

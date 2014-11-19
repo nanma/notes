@@ -13,7 +13,7 @@
 #+EXPORT_EXCLUDE_TAGS: no-export
 #+HTML_LINK_HOME: http://manan.org
 #+HTML_LINK_UP: ./index.html
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/emacs.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
 * 2.1 求二进制数中的位数
 1. 求模或位操作
