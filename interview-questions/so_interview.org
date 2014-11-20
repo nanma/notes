@@ -1,0 +1,157 @@
+#+TITLE:     面试题目
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-19
+#+DESCRIPTION: 算法
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./index.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 矩阵求幂
+题目：一个n*n的矩阵A，求它的n次幂。
+
+思路：
+顺序求A的n次连乘效率较低，采用分治的办法：
+
+A^{n} = (A^{n/2})*(A^{n/2})，只需要求出(A^{n/2})，而(A^{n/2})递归计算即可。
+
+#+BEGIN_SRC cpp
+//矩阵乘法
+int** mat_multiply(int** a, int** b, int size) {
+    int** temp;
+    temp = malloc(size * sizeof(int *));
+    for (i = 0; i < size; i++)
+        temp[i] = malloc(size * sizeof(int));
+    for(int i = 0; i < size; i++)
+        for(int j = 0; j < size; j++)
+            for(int k = 0 ; k < size; k++)
+                temp[i][j] = (temp[i][j] + (a[i][k] * b[k][j]) % m) % m ;
+    return temp;
+}
+
+//矩阵快速幂
+matrix m_pow(matrix a, int n) {
+    if(n == 1)
+        return a;
+    matrix temp = m_pow(a,n/2);
+    if(n & 1)
+        return mat_multiply(mat_multiply(temp, temp), a);
+    else
+        return mat_multiply(temp, temp);
+
+}
+#+END_SRC
+
+* 按层遍历树
+题目：给定一颗二叉树，要求按分层遍历该二叉树，即从上到下按层次访问该二叉树，每一层单独输出一行。每一层要求访问的顺序是从左到右。
+** 解法1：递归
+#+BEGIN_SRC cpp
+//打印第n层
+int PrintNodeAtLevel(Node* root, int level) {
+  if(!root || level < 0) {
+    return 0;
+  }
+  if(level == 0) {
+    cout << root->data << " ";
+    return 1;
+  }
+  return PrintNodeAtLevel(node->lChild, level - 1) + PrintNodeAtLevel(node->rChild, level - 1);
+}
+
+//打印二叉树
+void PrintNodeByLevel(Node* root, int depth) {
+  for (int level = 0; level < depth; level++) {
+    PrintNodeAtLevel(root, level;
+    cout << end;
+  }
+}
+#+END_SRC
+
+** 解法二
+使用vector容器来储存n个节点信息，并用一个游标变量cur,last记录前一层的访问结束条件，实现如下:
+#+BEGIN_SRC cpp
+void PrintNodeByLevel(Node* root) {
+  vector<Node*> vec;// 这里我们使用STL 中的vector来代替数组，可利用到其动态扩展的属性
+  vec.push_back(root);
+  int cur = 0;
+  int last = 1;
+  while(cur < vec.size()) {
+    Last = vec.size();// 新的一行访问开始，重新定位last于当前行最后一个节点的下一个位置
+    while(cur < last) {
+      cout << vec[cur] -> data <<" ";// 访问节点
+      if(vec[cur] -> lChild)// 当前访问节点的左节点不为空则压入
+          vec.push_back(vec[cur] -> lChild);
+      if(vec[cur] -> rChild)// 当前访问节点的右节点不为空则压入，注意左右节点的访问顺序不能颠倒
+          vec.push_back(vec[cur] -> rChild);
+      cur++;
+    }
+    cout << endl;// 当cur == last时,说明该层访问结束，输出换行符
+}
+#+END_SRC
+
+
+* 旋转数组的最小数字
+题目：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
+
+例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
+
+思路：我们可以有序数组经过旋转以后被分割为两段有序的数组，比如此处被分为{3,4,5}{1,2}这样连个数组，并前前半段数组中的数字肯定大于等于后半段的数组。我们找中间元素，让其跟元素首元素比较，如果大于首元素，则中间元素属于前半段有序数组，如果小于尾元素，那么中间元素就是后半段的元素。
+
+#+BEGIN_SRC cpp
+int MinInOrder(int* numbers, int index1, int index2);
+
+int Min(int* numbers, int length)
+{
+  if(numbers == NULL || length <= 0)
+    throw new std::exception("Invalid parameters");
+
+  int index1 = 0;
+  int index2 = length - 1;
+  int indexMid = index1;
+  while(numbers[index1] >= numbers[index2])
+  {
+    // 如果index1和index2指向相邻的两个数，
+    // 则index1指向第一个递增子数组的最后一个数字，
+    // index2指向第二个子数组的第一个数字，也就是数组中的最小数字
+    if(index2 - index1 == 1)
+    {
+      indexMid = index2;
+      break;
+    }
+
+    // 如果下标为index1、index2和indexMid指向的三个数字相等，
+    // 则只能顺序查找
+    indexMid = (index1 + index2) / 2;
+    if(numbers[index1] == numbers[index2] && numbers[indexMid] == numbers[index1])
+      return MinInOrder(numbers, index1, index2);
+
+    // 缩小查找范围
+    if(numbers[indexMid] >= numbers[index1])
+      index1 = indexMid;
+    else if(numbers[indexMid] <= numbers[index2])
+      index2 = indexMid;
+  }
+
+  return numbers[indexMid];
+}
+
+int MinInOrder(int* numbers, int index1, int index2)
+{
+  int result = numbers[index1];
+  for(int i = index1 + 1; i <= index2; ++i)
+  {
+    if(result > numbers[i])
+      result = numbers[i];
+  }
+
+  return result;
+}
+#+END_SRC

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>面试题目</title>
+<!-- 2014-11-20 Thu 22:23 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="马楠（nxmanan#gmail.com）" />
+<meta  name="description" content="算法"
+ />
+<meta  name="keywords" content="Algorithm" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="http://manan.org"> HOME </a>
+</div><div id="content">
+<h1 class="title">面试题目</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">矩阵求幂</a></li>
+<li><a href="#sec-2">按层遍历树</a>
+<ul>
+<li><a href="#sec-2-1">解法1：递归</a></li>
+<li><a href="#sec-2-2">解法二</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">旋转数组的最小数字</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">矩阵求幂</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+题目：一个n*n的矩阵A，求它的n次幂。
+</p>
+
+<p>
+思路：
+顺序求A的n次连乘效率较低，采用分治的办法：
+</p>
+
+<p>
+A<sup>n</sup> = (A<sup>n/2</sup>)*(A<sup>n/2</sup>)，只需要求出(A<sup>n/2</sup>)，而(A<sup>n/2</sup>)递归计算即可。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-cpp">//矩阵乘法
+int** mat_multiply(int** a, int** b, int size) {
+    int** temp = malloc(sizeof(int) * size * size);
+    memset(temp, 0, sizeof(temp));
+    for(int i = 0; i &lt; size; i++)
+        for(int j = 0; j &lt; size; j++)
+            for(int k = 0 ; k &lt; size; k++)
+                temp.ma[i][j] = (temp.ma[i][j] + (a.ma[i][k] * b.ma[k][j]) % m) % m ;
+    return temp;
+}
+
+//矩阵快速幂
+matrix m_pow(matrix a, int n) {
+    if(n == 1)
+        return a;
+    matrix temp = m_pow(a,n/2);
+    if(n &amp; 1)
+        return mat_multiply(mat_multiply(temp, temp), a);
+    else
+        return mat_multiply(temp, temp);
+
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">按层遍历树</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+题目：给定一颗二叉树，要求按分层遍历该二叉树，即从上到下按层次访问该二叉树，每一层单独输出一行。每一层要求访问的顺序是从左到右。
+</p>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">解法1：递归</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-cpp">//打印第n层
+int PrintNodeAtLevel(Node* root, int level) {
+  if(!root || level &lt; 0) {
+    return 0;
+  }
+  if(level == 0) {
+    cout &lt;&lt; root-&gt;data &lt;&lt; " ";
+    return 1;
+  }
+  return PrintNodeAtLevel(node-&gt;lChild, level - 1) + PrintNodeAtLevel(node-&gt;rChild, level - 1);
+}
+
+//打印二叉树
+void PrintNodeByLevel(Node* root, int depth) {
+  for (int level = 0; level &lt; depth; level++) {
+    PrintNodeAtLevel(root, level;
+    cout &lt;&lt; end;
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">解法二</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+使用vector容器来储存n个节点信息，并用一个游标变量cur,last记录前一层的访问结束条件，实现如下:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-cpp">void PrintNodeByLevel(Node* root) {
+  vector&lt;Node*&gt; vec;// 这里我们使用STL 中的vector来代替数组，可利用到其动态扩展的属性
+  vec.push_back(root);
+  int cur = 0;
+  int last = 1;
+  while(cur &lt; vec.size()) {
+    Last = vec.size();// 新的一行访问开始，重新定位last于当前行最后一个节点的下一个位置
+    while(cur &lt; last) {
+      cout &lt;&lt; vec[cur] -&gt; data &lt;&lt;" ";// 访问节点
+      if(vec[cur] -&gt; lChild)// 当前访问节点的左节点不为空则压入
+          vec.push_back(vec[cur] -&gt; lChild);
+      if(vec[cur] -&gt; rChild)// 当前访问节点的右节点不为空则压入，注意左右节点的访问顺序不能颠倒
+          vec.push_back(vec[cur] -&gt; rChild);
+      cur++;
+    }
+    cout &lt;&lt; endl;// 当cur == last时,说明该层访问结束，输出换行符
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">旋转数组的最小数字</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+题目：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
+</p>
+
+<p>
+例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
+</p>
+
+<p>
+思路：我们可以有序数组经过旋转以后被分割为两段有序的数组，比如此处被分为{3,4,5}{1,2}这样连个数组，并前前半段数组中的数字肯定大于等于后半段的数组。我们找中间元素，让其跟元素首元素比较，如果大于首元素，则中间元素属于前半段有序数组，如果小于尾元素，那么中间元素就是后半段的元素。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-cpp">int MinInOrder(int* numbers, int index1, int index2);
+
+int Min(int* numbers, int length)
+{
+  if(numbers == NULL || length &lt;= 0)
+    throw new std::exception("Invalid parameters");
+
+  int index1 = 0;
+  int index2 = length - 1;
+  int indexMid = index1;
+  while(numbers[index1] &gt;= numbers[index2])
+  {
+    // 如果index1和index2指向相邻的两个数，
+    // 则index1指向第一个递增子数组的最后一个数字，
+    // index2指向第二个子数组的第一个数字，也就是数组中的最小数字
+    if(index2 - index1 == 1)
+    {
+      indexMid = index2;
+      break;
+    }
+
+    // 如果下标为index1、index2和indexMid指向的三个数字相等，
+    // 则只能顺序查找
+    indexMid = (index1 + index2) / 2;
+    if(numbers[index1] == numbers[index2] &amp;&amp; numbers[indexMid] == numbers[index1])
+      return MinInOrder(numbers, index1, index2);
+
+    // 缩小查找范围
+    if(numbers[indexMid] &gt;= numbers[index1])
+      index1 = indexMid;
+    else if(numbers[indexMid] &lt;= numbers[index2])
+      index2 = indexMid;
+  }
+
+  return numbers[indexMid];
+}
+
+int MinInOrder(int* numbers, int index1, int index2)
+{
+  int result = numbers[index1];
+  for(int i = index1 + 1; i &lt;= index2; ++i)
+  {
+    if(result &gt; numbers[i])
+      result = numbers[i];
+  }
+
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2014-11-19</p>
+<p class="author">Author: 马楠（nxmanan#gmail.com）</p>
+<p class="date">Created: 2014-11-20 Thu 22:23</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
