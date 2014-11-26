@@ -76,3 +76,31 @@
 3. 先写伪代码
 4. 写代码
 5. 测试代码，修改错误
+
+*** Five algorithm approaches
+Keep in mind that the more problems you practice, the easier it will be to identify which approach to use.
+
+- Approach 1: Examplify 举例
+- Approach 2: Pattern matching 寻找类似问题
+- Approach 3: Simplify and Generalize 先简化再一般化
+- Approach 4: Base case and build 递推
+- Approach 5: Data structure brainstorm
+
+Note that the more problems you do, the more developed your instinct on which data structure to apply will be.You will also develop a more finely tuned instinct as to which of these approaches is the most useful.
+
+*** What good coding looks like
+Broadly speaking, good code has the following properties:
+- correct
+- efficient
+- simple
+- readable
+- maintainable
+
+**** Use Data Structures Generously 使用数据结构
+**** Appropriate code reuse 代码复用
+**** Modular 模块化
+**** Flexible and robust 灵活性和鲁棒性
+**** Error checking 错误检查
+
+** VII. The offer and beyond
+** [[./interview-questions.html][VIII. Interview Questions]]
