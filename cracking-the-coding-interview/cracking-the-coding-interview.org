@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interview》
+#+TITLE:     Cracking the Coding Interview
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-11-26
@@ -22,11 +22,57 @@
 - 中文版：《程序员面试金典》，第五版
   1. 纸质版/Kindle版：http://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00G8VOQOG
   2. 图灵PDF版：http://www.ituring.com.cn/book/1010
+  3. 豆瓣：http://book.douban.com/subject/25753386/
 ** 网站
+- http://www.crackingthecodinginterview.com/
 - http://www.careercup.com/
+这两个网站上提供了一些面试资料，可以浏览一下。
+
 ** 题解
 - 官方（第4版，Java）：http://www.careercup.com/careercup_book_solutions
+- 官方各种语言版（第5版，部分语言代码不全）：https://github.com/gaylemcd/ctci
 - C++版(by Hawstein)：https://github.com/Hawstein/cracking-the-coding-interview
-- 各种语言版（不完整）：https://github.com/gaylemcd/ctci
 
 * 笔记
+** I. The Interview Process
+*** Timeline and Preparation Map
+*** The Evaluation Process
+1. prior experience
+2. culture fit
+3. coding skills
+4. analytical ability
+** II. Behind the Scenes
+各公司面试要点。
+** III. Special Situations
+测试、PM等
+** IV. Before the Interview
+对学生和职业人士的建议。
+
+利用业余时间开发个人项目：just for fun.
+
+** V. Behavioral Questions
+关于经历的各种问题，帮助了解你。
+
+问题示例和解答技巧。
+** VI. Technical Questions
+*** Technical Preparation
+**** How to practice a question
+1. 独立完成，思考时空复杂度
+2. 在纸上写出代码
+3. 在纸上测试代码
+4. 在计算机上输入代码并测试，记录出现的错误
+
+**** What you need to know
+- 数据结构
+- 算法
+- 概念
+
+2的幂次表
+
+*** Handling technical questions
+解决问题的5步：
+1. 询问面试官，消除歧义
+2. 设计算法
+3. 先写伪代码
+4. 写代码
+5. 测试代码，修改错误
