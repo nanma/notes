@@ -1,0 +1,32 @@
+#+TITLE:     Cracking the Coding Interview》
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-26
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ../index.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 资料
+** 书
+- 英文原版：Cracking the Coding Interview, 5th Edition
+  1. 纸质版：http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
+- 中文版：《程序员面试金典》，第五版
+  1. 纸质版/Kindle版：http://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00G8VOQOG
+  2. 图灵PDF版：http://www.ituring.com.cn/book/1010
+** 网站
+- http://www.careercup.com/
+** 题解
+- 官方（第4版，Java）：http://www.careercup.com/careercup_book_solutions
+- C++版(by Hawstein)：https://github.com/Hawstein/cracking-the-coding-interview
+- 各种语言版（不完整）：https://github.com/gaylemcd/ctci
+
+* 笔记
