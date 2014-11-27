@@ -4,4 +4,7 @@
 Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the "true" length of the string. (Note: if implementing in Java, please use a character array so that you can perform this operation in place.)
 
 ** 译文
+写一个方法将一个字符串中的所有空格用‘%20’替代。可以假设字符串的末尾有足够的空间以容纳额外字符，并且你会获得字符串的真实长度。
 
+* 解答
+为了保证原地处理，应计算出替换后字符串的长度，然后从尾到头进行替换。
