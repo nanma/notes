@@ -1,0 +1,31 @@
+#+TITLE:     Cracking the Coding Interviews-Q1.1
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-27
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+Implement an algorithm to determine if a string has all unique characters. What if you can not use additional data structures?
+
+** 译文
+实现算法判断一个字符串是否由不相同的字符组成。如果不能使用额外的数据结构应该怎么做？
+
+* 解答
+应该首先询问字符串的字符类型，确定最优策略。
+1. 暴力法：检查每一对字符-O(n^{2})
+2. 排序：如果允许改变原数据，先排序再遍历-O(nlog(n))
+3. 计数法
+   - 原题要求不使用额外的数据结构，结合书中答案看意思是不使用高级数据结构
+   - 可以使用基本数据结构，因此可用额外的数组统计字符数量
