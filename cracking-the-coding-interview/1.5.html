@@ -3,8 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Cracking the Coding Interviews-Q1.4</title>
-<!-- 2014-11-28 五 09:22 -->
+<title>Cracking the Coding Interviews-Q1.5</title>
+<!-- 2014-11-28 五 15:42 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -143,9 +143,9 @@ for the JavaScript code in this tag.
 <div id="org-div-home-and-up">
  <a accesskey="h" href="./interview-questions.html"> UP </a>
  |
- <a accesskey="H" href="http://manan.org"> HOME </a>
+ <a accesskey="H" href="http://wiki.manan.org"> HOME </a>
 </div><div id="content">
-<h1 class="title">Cracking the Coding Interviews-Q1.4</h1>
+<h1 class="title">Cracking the Coding Interviews-Q1.5</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -169,7 +169,7 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
-Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the "true" length of the string. (Note: if implementing in Java, please use a character array so that you can perform this operation in place.)
+Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string.
 </p>
 </blockquote>
 </div>
@@ -180,7 +180,7 @@ Write a method to replace all spaces in a string with '%20'. You may assume that
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
-写一个方法将一个字符串中的所有空格用‘%20’替代。可以假设字符串的末尾有足够的空间以容纳额外字符，并且你会获得字符串的真实长度。
+根据重复字符的个数实现一个简单的字符串压缩的方法。例如，字符串aabcccccaaa将压缩为a2blc5a3。如果压缩后的字符串长度不比原始字符串短，则你的方法应返回原始字符串。
 </p>
 </blockquote>
 </div>
@@ -191,15 +191,33 @@ Write a method to replace all spaces in a string with '%20'. You may assume that
 <h2 id="sec-2">解答</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-为了保证原地处理，应计算出替换后字符串的长度，然后从尾到头进行替换。
+考查字符串操作细节，遍历的同时进行统计和转换。
 </p>
+
+<p>
+容易出现的问题：
+</p>
+<ol class="org-ol">
+<li>忘记添加字符串尾部的'\0' ，字符串长度要统计'\0'；
+</li>
+<li>移动字符串指针到尾部前，记得保存头部指针用于返回值；
+</li>
+<li>空间的申请和释放要配对；
+</li>
+<li>使用sprintf实现itoa；
+</li>
+<li>统计得到的字符重复次数长度可能大于1，要考虑到这一点。
+</li>
+<li>原书：如果是Java，要考虑String效率低，改用StringBuffer。
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2014-11-27</p>
+<p class="date">Date: 2014-11-28</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2014-11-28 五 09:22</p>
+<p class="date">Created: 2014-11-28 五 15:42</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

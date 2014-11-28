@@ -1,0 +1,38 @@
+#+TITLE:     Cracking the Coding Interviews-Q1.5
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-28
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+根据重复字符的个数实现一个简单的字符串压缩的方法。例如，字符串aabcccccaaa将压缩为a2blc5a3。如果压缩后的字符串长度不比原始字符串短，则你的方法应返回原始字符串。
+ #+END_QUOTE
+
+* 解答
+考查字符串操作细节，遍历的同时进行统计和转换。
+
+容易出现的问题：
+1. 忘记添加字符串尾部的'\0' ，字符串长度要统计'\0'；
+2. 移动字符串指针到尾部前，记得保存头部指针用于返回值；
+3. 空间的申请和释放要配对；
+4. 使用sprintf实现itoa；
+5. 统计得到的字符重复次数长度可能大于1，要考虑到这一点。
+6. 原书：如果是Java，要考虑String效率低，改用StringBuffer。

@@ -11,16 +11,20 @@
 #+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: no-export
-#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_HOME: http://wiki.manan.org
 #+HTML_LINK_UP: ./interview-questions.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
 * 题目
 ** 原文
+#+BEGIN_QUOTE
 Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the "true" length of the string. (Note: if implementing in Java, please use a character array so that you can perform this operation in place.)
+#+END_QUOTE
 
 ** 译文
+#+BEGIN_QUOTE
 写一个方法将一个字符串中的所有空格用‘%20’替代。可以假设字符串的末尾有足够的空间以容纳额外字符，并且你会获得字符串的真实长度。
+#+END_QUOTE
 
 * 解答
 为了保证原地处理，应计算出替换后字符串的长度，然后从尾到头进行替换。
