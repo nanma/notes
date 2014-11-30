@@ -1,0 +1,44 @@
+#+TITLE:     Cracking the Coding Interviews-Q1.6
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-11-30
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+* 译文
+给定一个用NxN矩阵表示的图片，图中每个像素用4字节表示。写一个方法实现旋转图片90度。你能原地实现吗？
+
+* 解答
+我的思路是对方阵的每一圈分别进行旋转。旋转的关键是写出旋转前后对应点的坐标，代码如下。
+#+BEGIN_SRC cpp
+void rotate(int **array, int n) {
+  //外层循环依次从外到内处理每一圈
+  for ( int curSize = n; curSize > 1; curSize -= 2) {
+  //内层循环处理当前圈中所有要旋转的点
+    for (int ind = 0; ind < curSize - 1; ind++) {
+      int curCircle = (n - curSize) / 2;
+      int tmp = array[curCircle][ind + curCircle];  //top
+      array[curCircle][ind + curCircle] =
+          array[n - 1 - curCircle + ind][curCircle]; //left
+      array[n - 1 - curCircle + ind][curCircle] =
+          array[n - 1 - curCircle][n - 1 - curCircle - ind]; //bottom;
+      array[n - 1 - curCircle][n - 1 - curCircle - ind] =
+          array[curCircle + ind][n - 1 -curCircle];  //right
+      array[curCircle + ind][n - 1 -curCircle] = tmp;
+    }
+  }
+}
+#+END_SRC
