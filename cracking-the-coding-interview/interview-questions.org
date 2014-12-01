@@ -54,3 +54,6 @@
 [[./2.7.html][2.7 Implement a function to check if a linked list is a palindrome.]]
 
 ** Chapter 3 | Stacks and Queues
+实现：栈和队列都用链表实现。
+
+[[./3.1.html][3.1 Describe how you could use a single array to implement three stacks.]]
