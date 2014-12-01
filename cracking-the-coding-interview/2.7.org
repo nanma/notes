@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q2.1
+#+TITLE:     Cracking the Coding Interviews-Q2.7
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-01
