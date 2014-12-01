@@ -1,0 +1,32 @@
+#+TITLE:     Cracking the Coding Interviews-Q2.1
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Implement a function to check if a linked list is a palindrome.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+实现一个函数检查一个链表是否是回文结构（对称的）。
+#+END_QUOTE
+
+* 解答
+1. 将链表倒置，然后和原链表比较，直比较前一半即可；
+2. 为了实现逆序，用栈存储前一半链表节点，然后和后一半比较；
+   - 用快慢指针找出前一半节点

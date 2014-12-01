@@ -1,0 +1,52 @@
+#+TITLE:     Cracking the Coding Interviews-Q2.6
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Given a circular linked list, implement an algorithm which returns the node at the beginning of the loop.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+给定一个含有环的链表，实现算法返回环开始处的节点。
+#+END_QUOTE
+
+* 解答
+用两个快慢指针进行追赶，从头指针同时出发，一个每次移动一格，记为slow，另一个每次移动两格，记为fast。
+
+设链表中环外的部分有节点m个，环上有n个节点。（下图中，m=2, n=3。）
+
+给环上的节点从环开始处顺时针标号，从0开始。
+#+BEGIN_EXAMPLE
+      1
+      o
+     / \
+o-o-o - o
+    0   2
+#+END_EXAMPLE
+两个指针同时出发，经过m步后，第一个指针slow所在的节点标号为 =0= ，第二个指针fast所在的节点标号为 =(2m-m)%n=m%n= 。
+
+此时沿着指针指向的方向，fast落后slow =n-m%n= 步。接着移动两指针，由于fast每次能追赶一步，所以经过 =n-m%n= 步后，fast追上slow（第一次相遇）。
+
+此时两指针的位置为 =n-m%n= ，这个位置距离0节点的距离是 =m%n= 。
+
+设 =m%n=k= ，则 =m=xn+k= 。
+
+这时将slow移到链表头，fast保持当前位置不变，两指针同时以每次一步的速度开始移动。经过m步后，slow移到了0点，fast移动了 =xn+k= 步也位于0点，即两指针相遇在0点（第二次），找到了环形的头部。
+
+总结：按照上述方法，经过两次相遇的位置为环形的头部。

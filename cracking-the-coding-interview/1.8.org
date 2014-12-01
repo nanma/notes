@@ -1,0 +1,28 @@
+#+TITLE:     Cracking the Coding Interviews-Q1.8
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check If s2 is a rotation of s1 using only one call to isSubstring (e.g., "waterbottLe" is a rotation of "erbottLewat") .
+#+END_QUOTE
+** 译文
+#+BEGIN_QUOTE
+假设你有一个方法isSubstring可以判断一个字符串是否是另一个字符串的子字符串，给定两个字符串s1和s2，请写代码检查s2是否是s1的旋转，要求只能调用一次isSubstring。
+#+END_QUOTE
+* 解答
+拼接s1s1，然后调用isSubstring(s1s1, s2)即可。

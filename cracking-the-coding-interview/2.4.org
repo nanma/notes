@@ -1,0 +1,30 @@
+#+TITLE:     Cracking the Coding Interviews-Q2.4
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+写代码在链表节点x处划分链表，使得小于x的节点排b在大于等于x的节点之前。
+#+END_QUOTE
+
+* 解答
+准备两个链表，分别用来存储小于或大于等于x的节点，然后直接遍历一遍链表，将各节点分别连到这两个链表中，最后连接这两个链表。

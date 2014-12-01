@@ -1,0 +1,31 @@
+#+TITLE:     Cracking the Coding Interviews-Q1.7
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+#+END_QUOTE
+** 译文
+#+BEGIN_QUOTE
+实现一个算法：如果一个MxN矩阵中某个元素为0，则该元素所在行和列的所有元素都被设为0。
+#+END_QUOTE
+
+* 解答
+遍历一遍矩阵，保存所有0元素的坐标，然后根据坐标再次遍历矩阵进行设0。
+
+如果用矩阵保存0元素的坐标，需要空间MxN，实际上只要分别保存0元素的行坐标和列坐标，就可以完成设0，需要空间M+N。
