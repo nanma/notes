@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>VIII. Interview Questions</title>
-<!-- 2014-12-02 二 15:45 -->
+<!-- 2014-12-02 二 17:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -155,7 +155,15 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-1">Chapter 1 | Arrays and Strings</a></li>
 <li><a href="#sec-1-2">Chapter 2 | Linked Lists</a></li>
 <li><a href="#sec-1-3">Chapter 3 | Stacks and Queues</a></li>
-<li><a href="#sec-1-4">Chapter 4 | Trees and Graphs</a></li>
+<li><a href="#sec-1-4">Chapter 4 | Trees and Graphs</a>
+<ul>
+<li><a href="#sec-1-4-1">需要问清楚的问题：</a></li>
+<li><a href="#sec-1-4-2">二叉树遍历</a></li>
+<li><a href="#sec-1-4-3">树的平衡：红黑树和AVL树</a></li>
+<li><a href="#sec-1-4-4">Trie树（字典树；单词查找树）</a></li>
+<li><a href="#sec-1-4-5">图的遍历</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -289,13 +297,76 @@ Write a program to move the disks from the first tower to the last using Stacks.
 
 <div id="outline-container-sec-1-4" class="outline-3">
 <h3 id="sec-1-4">Chapter 4 | Trees and Graphs</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">需要问清楚的问题：</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ol class="org-ol">
+<li>二叉树 vs. 二叉搜索树
+</li>
+<li>平衡 vs. 非平衡
+</li>
+<li>满(Full)和完全(Complete)
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2">二叉树遍历</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+三种顺序
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3">树的平衡：红黑树和AVL树</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+应熟悉平衡树操作的复杂度和大概操作，细节问题在面试中一半不会出现。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4">Trie树（字典树；单词查找树）</h4>
+</div>
+<div id="outline-container-sec-1-4-5" class="outline-4">
+<h4 id="sec-1-4-5">图的遍历</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<ul class="org-ul">
+<li>DFS
+如果项访问图的每一个节点，或者要访问每一个节点直到找到寻找的任何内容，则DFS是最容易的做法
+</li>
+<li>BFS
+使用队列实现，实现略复杂，但是能找到最短路径
+</li>
+</ul>
+
+
+<p>
+<a href="./4.1.html">4.1 Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.</a>
+</p>
+
+<p>
+<a href="./4.2.html">4.2 Given a directed graph, design an algorithm to find out whether there is a route between two nodes.</a>
+</p>
+
+<p>
+<a href="./4.3.html">4.3 Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.</a>
+</p>
+
+<p>
+<a href="./4.4.html">4.4 Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).</a>
+</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2014-11-26</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2014-12-02 二 15:45</p>
+<p class="date">Created: 2014-12-02 二 17:30</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
