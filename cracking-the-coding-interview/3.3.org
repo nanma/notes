@@ -1,0 +1,36 @@
+#+TITLE:     Cracking the Coding Interviews-Q3.3
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Imagine a (literal) stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack (that is, pop() should return the same values as it would if there were just a single stack). FOLLOW UP:Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+设想有一摞盘子，当盘子堆的太高时可能会掉落。所以在现实中，当前一摞盘子堆的太高时，我们会开始新的一摞。实现一个叫 SetOfStacks 的数据结构来模拟这种情况。 SetOfStacks 由若干个栈构成，当前一个栈容量超限时会新建一个新的栈。 SetOfStacks.push() 和 SetOfStacks.pop() 和一般栈的行为应一致。
+
+扩展问题：
+
+实现一个函数popAt(int index)，使它能在指定的子栈上执行pop操作。
+#+END_QUOTE
+
+* 解答
+用list保存所有子栈即可，每当一个栈满时，增加新栈。
+
+扩展问题需要了解是否要保持各栈容量为满，如果需要则要进行栈元素移动操作。

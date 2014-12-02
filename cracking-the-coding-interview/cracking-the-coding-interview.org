@@ -84,7 +84,7 @@ Keep in mind that the more problems you practice, the easier it will be to ident
 - Approach 2: Pattern matching 寻找类似问题
 - Approach 3: Simplify and Generalize 先简化再一般化
 - Approach 4: Base case and build 递推
-- Approach 5: Data structure brainstorm
+- Approach 5: Data structure brainstorm 数据结构头脑风暴
 
 Note that the more problems you do, the more developed your instinct on which data structure to apply will be.You will also develop a more finely tuned instinct as to which of these approaches is the most useful.
 

@@ -3,8 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Cracking the Coding Interviews-Q3.1</title>
-<!-- 2014-12-02 二 17:24 -->
+<title>Cracking the Coding Interviews-Q3.7</title>
+<!-- 2014-12-02 二 15:43 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -145,7 +145,7 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="http://wiki.manan.org"> HOME </a>
 </div><div id="content">
-<h1 class="title">Cracking the Coding Interviews-Q3.1</h1>
+<h1 class="title">Cracking the Coding Interviews-Q3.7</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -169,7 +169,7 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
-Describe how you could use a single array to implement three stacks.
+An animal shelter holds only dogs and cats, and operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog and dequeueCat. You may use the built-in LinkedList data structure.
 </p>
 </blockquote>
 </div>
@@ -180,7 +180,11 @@ Describe how you could use a single array to implement three stacks.
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
-如何用一个数组实现三个栈。
+一个宠物收容所只收容狗或者猫，并且它的运营基于先入先出的原则。人们只能选择领养最先进入收容所的的动物，或者选择更喜欢狗或者猫（然后会领到这种类型中最早进入的动物）。不能选择具体领养那一只的动物。
+</p>
+
+<p>
+建立一种维护这个系统的数据结构，并实现相应的操作，比如 enqueue, dequeueAny, dequeueDog and dequeueCat。可以使用内置的 LinkedList 数据结构。
 </p>
 </blockquote>
 </div>
@@ -191,18 +195,18 @@ Describe how you could use a single array to implement three stacks.
 <h2 id="sec-2">解答</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
-<li>简单方法：3个栈平分数组大小
+<li>用一个队列存储，出队时判断动物种类；
 </li>
-<li>复杂方法：不固定每个栈的大小
+<li>用两个队列，入队时打时间戳。
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2014-12-01</p>
+<p class="date">Date: 2014-12-02</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2014-12-02 二 17:24</p>
+<p class="date">Created: 2014-12-02 二 15:43</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

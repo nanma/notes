@@ -1,7 +1,7 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q4.2
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-01
+#+DATE:      2014-12-02
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -18,15 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+给定一个有向图，设计算法查找两个节点间是否有路径。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
-
+1. DFS，找路径
+2. BFS，找最短路径

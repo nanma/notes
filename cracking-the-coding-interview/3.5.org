@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q3.5
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-01
@@ -18,15 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+Implement a MyQueue class which implements a queue using two stacks.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+用两个栈实现队列类MyQueue。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
-
+先入一个栈，然后移到另一个栈。

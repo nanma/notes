@@ -1,7 +1,7 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q3.6
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-01
+#+DATE:      2014-12-02
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -18,15 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+Write a program to sort a stack in ascending order (with biggest items on top). You may use at most one additional stack to hold items, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and isEmpty.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+写程序实现按递增序对栈排序（最大的元素在栈顶）。可以使用最多一个额外的栈用来存储元素，但是不能将元素复制到其他数据结构中。栈支持以下操作：push, pop, peek, isEmpty。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
-
+保证最小元素永远在辅助栈的栈底，最后返回辅助栈。

@@ -1,7 +1,7 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q4.1
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-01
+#+DATE:      2014-12-02
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -18,15 +18,17 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+实现一个函数检查一个二叉树是否是平衡的。本题中，平衡树的定义是任意节点的两颗子树的高度相差不超过1。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
+1. 定义计算树节点高度的函数，递归检查平衡性
+   - 由于节点高度重复计算，复杂度O(N^2)
+2. 计算高度过程中，已经得到了任意节点的左右子树高度，可以直接判断是否平衡
+   - 不再重复计算，复杂度O(N)
 

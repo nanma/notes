@@ -1,7 +1,7 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q4.3
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-01
+#+DATE:      2014-12-02
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -18,15 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+给定一个元素不重复的递增整数数组，写一个算法生成一个具有最小高度的二叉搜索树。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
-
+二分，递归。

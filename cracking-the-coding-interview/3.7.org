@@ -1,0 +1,33 @@
+#+TITLE:     Cracking the Coding Interviews-Q3.7
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-02
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+An animal shelter holds only dogs and cats, and operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog and dequeueCat. You may use the built-in LinkedList data structure.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+一个宠物收容所只收容狗或者猫，并且它的运营基于先入先出的原则。人们只能选择领养最先进入收容所的的动物，或者选择更喜欢狗或者猫（然后会领到这种类型中最早进入的动物）。不能选择具体领养那一只的动物。
+
+建立一种维护这个系统的数据结构，并实现相应的操作，比如 enqueue, dequeueAny, dequeueDog and dequeueCat。可以使用内置的 LinkedList 数据结构。
+#+END_QUOTE
+
+* 解答
+1. 用一个队列存储，出队时判断动物种类；
+2. 用两个队列，入队时打时间戳。

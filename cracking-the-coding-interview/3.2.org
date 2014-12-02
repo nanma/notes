@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q3.1
+#+TITLE:     Cracking the Coding Interviews-Q3.2
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-01
@@ -18,15 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Describe how you could use a single array to implement three stacks.
+How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in 0(1) time.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-如何用一个数组实现三个栈。
+设计一个栈，使得它能不仅能push和pop，还具有一个函数min能返回最小栈的元素。Push，pop和min的时间复杂度都为O(1)。
 #+END_QUOTE
 
 * 解答
-1. 简单方法：3个栈平分数组大小
-2. 复杂方法：不固定每个栈的大小
-
+1. 用一个变量记录最小值，用一个数组记录下一个最小值的下标；push和pop时更新这两个记录；
+2. 用辅助栈，存储最小数字序列

@@ -1,0 +1,43 @@
+#+TITLE:     Cracking the Coding Interviews-Q3.4
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-01
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints: 
+1) Only one disk can be moved at a time. 
+2) A disk is slid off the top of one tower onto the next rod. 
+3) A disk can only be placed on top of a larger disk. 
+Write a program to move the disks from the first tower to the last using Stacks.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+在经典的汉诺塔问题中，你有三座塔和N个大小不同的盘子，每个盘子可以放到任一个塔上。开始所有盘子按照从上到下大小递增的顺序放在一个塔上，其他限制条件为：
+1) 每次只能移动一个盘子；
+2) 每个盘子只能从一个塔的顶端移到下一个塔上；
+3) 每个盘子只能放在比它大的盘子上。
+写一个程序把所有盘子从第一个塔移到最后一个塔上。
+#+END_QUOTE
+
+* 解答
+解决思路：基本情况+递推。
+
+- n=1.
+- n=2.
+- n=3.
+- n=4.
