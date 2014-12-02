@@ -56,16 +56,16 @@
 ** Chapter 3 | Stacks and Queues
 实现：栈和队列都用链表实现。
 
-[[./3.1.html][3.1 Describe how you could use a single array to implement three stacks.]] 
+[[./3.1.html][3.1 Describe how you could use a single array to implement three stacks.]]
 
 [[./3.2.html][3.2 How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in 0(1) time.]]
 
 [[./3.3.html][3.3 Imagine a (literal) stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack (that is, pop() should return the same values as it would if there were just a single stack). FOLLOW UP:Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.]]
 
-[[./3.4.html][3.4 In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints: 
-(1) Only one disk can be moved at a time. 
-(2) A disk is slid off the top of one tower onto the next rod. 
-(3) A disk can only be placed on top of a larger disk. 
+[[./3.4.html][3.4 In the classic problem of the Towers of Hanoi, you have 3 towers and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (i.e., each disk sits on top of an even larger one). You have the following constraints:
+(1) Only one disk can be moved at a time.
+(2) A disk is slid off the top of one tower onto the next rod.
+(3) A disk can only be placed on top of a larger disk.
 Write a program to move the disks from the first tower to the last using Stacks.]]
 
 [[./3.5.html][3.5 Implement a MyQueue class which implements a queue using two stacks.]]
@@ -99,3 +99,7 @@ Write a program to move the disks from the first tower to the last using Stacks.
 [[./4.3.html][4.3 Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.]]
 
 [[./4.4.html][4.4 Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).]]
+
+[[./4.5.html][4.5 Implement a function to check if a binary tree is a binary search tree.]]
+
+[[./4.6.html][4.6 Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.]]

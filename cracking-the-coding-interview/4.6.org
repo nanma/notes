@@ -1,0 +1,30 @@
+#+TITLE:     Cracking the Coding Interviews-Q4.6
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-02
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+写算法查找二叉搜索树中给定节点的下一个节点（在中序遍历时）。假定每个节点有指向父节点的链接。
+#+END_QUOTE
+
+* 解答
+分左右子树情况讨论，需要细心。
