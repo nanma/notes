@@ -1,0 +1,44 @@
+#+TITLE:     Cracking the Coding Interviews-Q5.1
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-03
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method to insert M into N such that M starts at bit j and ends at bit i. You can assume that the bits j through i have enough space to fit all of M. That is, if M= 10011, you can assume that there are at least 5 bits between j and i. You would not, for example, have j=3 and i=2, because M could not fully fit between bit 3 and bit 2. 
+
+EXAMPLE: 
+
+Input: N = 10000000000, M = 10011, i = 2, j = 6 
+
+Output: N = 10001001100.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+给定两个32位数字N和M，和两个比特位i和j。写一个方法，将M插入N中，使得M从比特位j开始在比特位i结束。假定从j到i的位由足够的空间容纳M。就是说，如果M=10011，可以假定从j到i至少由5位。你不会得到j=3，i=2这样的输入，因为这样M不可能在比特位3和比特位2之间放得下。
+
+例子：
+
+输入：N = 10000000000, M = 10011, i = 2, j = 6 
+
+输出：N = 10001001100.
+#+END_QUOTE
+
+* 解答
+- 构造掩码
+- 完整表达式较长的情况，用变量分步骤写出
+- 仔细检查，特别是offset的大小容易出错

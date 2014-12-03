@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.
+#+TITLE:     Cracking the Coding Interviews-Q4.8
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-03
@@ -18,12 +18,15 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds of nodes. Create an algorithm to decide if T2 is a subtree of T1. A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees would be identical.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+有两颗非常大的二叉树，T1有数百万个节点，T2有数百个节点。写一个算法判断T2是否是T1的子树。T2是T1的子树，当T1有一个节点n使得n的子树和T2完全相同。也就是，如果从节点n处砍掉这棵树，这两颗树将完全相同。
 #+END_QUOTE
 
 * 解答
+1. 通过前序、中序遍历序列判定
+   - 是否有例外情况？
+2. 递归判断子树和相同关系

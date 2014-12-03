@@ -1,7 +1,7 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.
+#+TITLE:     Cracking the Coding Interviews-Q4.7
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-03
+#+DATE:      2014-12-02
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -18,12 +18,18 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily a binary search tree.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
+设计算法并写代码实现查找二叉树中两个节点的首个公共祖先。 *不能使用数据结构中存储额外的节点。*
 
+注意：不一定是二叉搜索树。
 #+END_QUOTE
 
 * 解答
+类似剑指offer第50题，但要求不使用额外数据结构。
+1. 用类似与BST的方法从root开始判断：O(n)
+2. 优化：方法一递归调用有重复计算
+   - 可以同时既判断节点是否属于当前子树，又返回公共祖先

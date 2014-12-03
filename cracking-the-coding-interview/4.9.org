@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.
+#+TITLE:     Cracking the Coding Interviews-Q4.9
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-03
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+You are given a binary tree in which each node contains a value. Design an algorithm to print all paths which sum to a given value. The path does not need to start or end at the root or a leaf.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+给定一个二叉树，其中每个节点包含一个数值。设计算法打印所有和为给定值的路径。路径不一定要从根或叶子开始和结束。
 #+END_QUOTE
 
 * 解答
+- 用从简单到一般的策略，先考虑路径只能从root开始的简单情况，解决后扩展到路径从任意节点开始的情况；
+- 回溯path[]到中间即开始计算路径和，不用计算到root处即为一半情况的解法

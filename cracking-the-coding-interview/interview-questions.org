@@ -74,7 +74,6 @@ Write a program to move the disks from the first tower to the last using Stacks.
 
 [[./3.7.html][3.7 An animal shelter holds only dogs and cats, and operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog and dequeueCat. You may use the built-in LinkedList data structure.]]
 
-
 ** Chapter 4 | Trees and Graphs
 *** 需要问清楚的问题：
 1. 二叉树 vs. 二叉搜索树
@@ -103,3 +102,19 @@ Write a program to move the disks from the first tower to the last using Stacks.
 [[./4.5.html][4.5 Implement a function to check if a binary tree is a binary search tree.]]
 
 [[./4.6.html][4.6 Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.]]
+
+[[./4.7.html][4.7 Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily a binary search tree.]]
+
+[[./4.8][4.8 You have two very large binary trees: T1, with millions of nodes, and T2, with hundreds of nodes. Create an algorithm to decide if T2 is a subtree of T1. A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees would be identical.]]
+
+[[./4.9.html][4.9 You are given a binary tree in which each node contains a value. Design an algorithm to print all paths which sum to a given value. The path does not need to start or end at the root or a leaf.]]
+
+
+* Concetps and Algorithms
+** Chapter 5 | Bit Manipulation
+*** Bit Facts and Tricks
+*** Common Bit Tasks: Get, Set, Clear, and Update Bit
+
+[[./5.1.html][5.1 You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method to insert M into N such that M starts at bit j and ends at bit i. You can assume that the bits j through i have enough space to fit all of M. That is, if M= 10011, you can assume that there are at least 5 bits between j and i. You would not, for example, have j=3 and i=2, because M could not fully fit between bit 3 and bit 2. EXAMPLE: Input: N = 16000000000, M = 10011, i = 2, j = 6 Output: N = 10001001100.]]
+
+[[./5.2.html][5.2 Given a real number between 0 and 7 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."]]
