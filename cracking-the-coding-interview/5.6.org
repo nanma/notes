@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.2
+#+TITLE:     Cracking the Coding Interviews-Q5.6
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-03
@@ -18,13 +18,15 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
+Write a program to swap odd and even bits in an integer with as few instructions as possible(e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3are swapped, and soon).
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-以double形式给定一个大小在0到1之间的实数（如0.72），打印出它的二进制表示。如果这个数不能用32位二进制表示，打印 "ERROR".
+写一个程序交换给定整数的奇数和偶数位，所需要的步骤越少越好。
 #+END_QUOTE
 
 * 解答
-小数的二进制表示形式和十进制的转换。
+获得a=01010101， =result = (a&x << 1) | (~a&x >> 1)= 。
+
+a=01010101=0x55, ~a=10101010=0xaa.

@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.2
+#+TITLE:     Cracking the Coding Interviews-Q5.3
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-03
@@ -18,13 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
+Given a positive integer, print the next smallest and the next largest number that have the same number of 1 bits in their binary representation.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-以double形式给定一个大小在0到1之间的实数（如0.72），打印出它的二进制表示。如果这个数不能用32位二进制表示，打印 "ERROR".
+给定一个正整数，打印出二进制表示中和该整数具有相同数量1比特位数的下一个较小和下一个较大的数字。
 #+END_QUOTE
 
 * 解答
-小数的二进制表示形式和十进制的转换。
+pass.

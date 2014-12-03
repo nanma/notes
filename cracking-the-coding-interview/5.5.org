@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q5.2
+#+TITLE:     Cracking the Coding Interviews-Q5.5
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-03
@@ -18,13 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
+Write a function to determine the number of bits required to convert integer A to integer B.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-以double形式给定一个大小在0到1之间的实数（如0.72），打印出它的二进制表示。如果这个数不能用32位二进制表示，打印 "ERROR".
+写一个函数计算将整数A转换成整数B需要转换的比特位数。
 #+END_QUOTE
 
 * 解答
-小数的二进制表示形式和十进制的转换。
+异或A^B，然后快速统计A^B中1的个数。
