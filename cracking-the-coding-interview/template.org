@@ -1,7 +1,7 @@
 #+TITLE:     Cracking the Coding Interviews-Q5.
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-03
+#+DATE:      2014-12-04
 #+DESCRIPTION: Cracking the Coding Interview笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en

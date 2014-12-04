@@ -1,0 +1,31 @@
+#+TITLE:     Cracking the Coding Interviews-Q5.7
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-04
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+An array A contains all the integers from 0 through n, except for one number which is missing. In this problem, we cannot access an entire integer in A with a single operation. The elements of A are represented in binary, and the only operation we can use to access them is "fetch the j th bit of A[i]," which takes constant time. Write code to find the missing integer. Can you do it in O(n) time?
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+数组A中有除一个整数外从0到n的所有整数。在本问题中，我们无法通过一次操作访问A中的一个完整整数。A中元素以二进制形式表示，唯一能访问元素的方式是“取A[i]的第j个比特位”，这个操作需要常量时间。写代码查找这个缺少的整数。能否在O(n)时间内完成？
+#+END_QUOTE
+
+* 解答
+1. 求和再求差，复杂度O(nlog(n))；
+2. 分析奇偶规律，统计各位的1，0个数，得出缺失数字每一位的数字
