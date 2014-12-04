@@ -1,0 +1,31 @@
+#+TITLE:     Cracking the Coding Interviews-Q9.8
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-04
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents) and pennies (1 cent), write code to calculate the number of ways of representing n cents.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+给定不限量的25分硬币，10份硬币，5分硬币和1分硬币，写程序计算能够组成n分钱的方式有多少种。
+#+END_QUOTE
+
+* 解答
+- 当前解+子问题解
+- 子问题解要控制条件，缩小解的范围，通过递归传递的参数来实现这一点

@@ -148,3 +148,5 @@ Write a program to move the disks from the first tower to the last using Stacks.
 [[./9.6.html][9.6 Implement an algorithm to print all valid (i.e., properly opened and closed) combinations of n-pairs of parentheses.]]
 
 [[./9.7.html][9.7 Implement the "paint fill" function that one might see on many image editing programs. That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill in the surrounding area until the color changes from the original color.]]
+
+[[./9.8.html][9.8 Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents) and pennies (1 cent), write code to calculate the number of ways of representing n cents.]]
