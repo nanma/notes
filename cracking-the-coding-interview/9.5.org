@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.5
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Write a method to compute all permutations of a string.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+写方法计算字符串的所有排列组合。
 #+END_QUOTE
 
 * 解答
+- Base case and build approach.
+- 当前增量和子问题的解组合得到新解。

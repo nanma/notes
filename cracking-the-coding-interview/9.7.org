@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.7
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Implement the "paint fill" function that one might see on many image editing programs. That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill in the surrounding area until the color changes from the original color.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+实现一个图片编辑软件中经常用到的“画图填充”函数。
 #+END_QUOTE
 
 * 解答
+- 递归即可。
+- 确定图像中行列坐标

@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.4
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Write a method to return all subsets of a set.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+写一个方法返回一个集合的所有子集。
 #+END_QUOTE
 
 * 解答
+1. 动态规划：子问题的解加上增量组成当前解。
+2. 利用二进制表示

@@ -1,0 +1,39 @@
+#+TITLE:     Cracking the Coding Interviews-Q9.2
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-04
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+Imagine a robot sitting on the upper left corner of an X by Y grid. The robot can only move in two directions: right and down. How many possible paths are there for the robot to go from (0, 0) to (X, Y) ? 
+
+FOLLOW UP
+
+Imagine certain spots are "off limits," such that the robot cannot step on them. Design an algorithm to find a path for the robot from the top left to the bottom right.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+想象一个机器人坐在X*Y方阵的左上角，机器人只能向右或向下移动。从(0, 0)移到(x, y)总共由多少种可能的路径？
+
+扩展：
+
+方阵中有一些点是不能进入的，设计算法为机器人找一条从左上角到右下角的路径。
+#+END_QUOTE
+
+* 解答
+- 路径数可用排列组合计算
+- 找路径可以用遍历的方法查找；本例中路径为方阵，可以递推

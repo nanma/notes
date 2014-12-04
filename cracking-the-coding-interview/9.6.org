@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.6
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Implement an algorithm to print all valid (i.e., properly opened and closed) combinations of n-pairs of parentheses.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+实现算法打印出n对括号的所有合法（即括号正确的打开和关闭）组合。
 #+END_QUOTE
 
 * 解答
+1. 动态规划，注意检查重复情况
+2. 递归构造出字符串，判定当前位置可能出现的括号类型

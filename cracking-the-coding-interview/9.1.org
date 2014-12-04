@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.1
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,16 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+A child is running up a staircase with n steps, and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+一个小孩上n级的台阶，他可以每次上1级，2级或3级台阶。实现一个方法计算他有多少种方法登上楼梯。
 #+END_QUOTE
 
 * 解答
+斐波那契问题变种。
+
+- 递归
+- 循环

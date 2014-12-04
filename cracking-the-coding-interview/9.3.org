@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.3
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-04
@@ -18,12 +18,22 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
+A magic index in an array A[1...n-1] is defined to be an index such that A[i] = i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A. 
 
+FOLLOW UP
+
+What if the values are not distinct?
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
+数组A[1...n-1]的神奇下标是指使得A[i]=i的下标i。给定一个排好序的不同整数组成的数组，写一个方法查找数组A的神奇下标。
 
+扩展：
+
+如果数组值有重复怎么办？
 #+END_QUOTE
 
 * 解答
+- 二分处理
+- 有重复的情况，两半都有可能出现结果，跳过不可能的情况继续二分
