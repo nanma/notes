@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q9.
+#+TITLE:     Cracking the Coding Interviews-Q9.10
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-05
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+You have a stack of n boxes, with widths w_{i}, heights l_{i} and depths d_{i}. The boxes cannot be rotated and can only be stacked on top of one another if each box in the stack is strictly larger than the box above it in width, height, and depth. Implement a method to build the tallest stack possible, where the heigh t of a stack is the sum of the heights of each box.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+有n个盒子组成的栈，每个盒子宽度为w_{i}，高度l_{i}，深度d_{i}。盒子不能旋转，并且只能摞在比它宽、高、深度严格更大的盒子上面。实现一个方法来搭建最高的栈，栈的高度t是所有盒子的高度之和。
 #+END_QUOTE
 
 * 解答
+- 类似于八皇后问题
+- 优化：做memo，节省计算时间

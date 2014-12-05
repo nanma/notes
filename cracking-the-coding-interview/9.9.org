@@ -18,12 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Write an algorithm to print all ways of arranging eight queens on an 8x8 chess board so that none of them share the same row, column or diagonal. In this case, "diagonal" means all diagonals, not just the two that bisect the board.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+写算法打印所有使8个皇后在8x8棋盘上两两不在同一行，同一列或同一对角线的排列方法。此处对角线指所有对角线，并非单指等分棋盘的两条对角线。
 #+END_QUOTE
 
 * 解答
+依然是：当前问题解+子问题解构成解。
