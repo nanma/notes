@@ -156,7 +156,12 @@ Write a program to move the disks from the first tower to the last using Stacks.
 [[./9.10.html][9.10 You have a stack of n boxes, with widths w_{i}, heights l_{i} and depths d_{i}. The boxes cannot be rotated and can only be stacked on top of one another if each box in the stack is strictly larger than the box above it in width, height, and depth. Implement a method to build the tallest stack possible, where the heigh t of a stack is the sum of the heights of each box.]]
 
 [[./9.11.html][9.11 Given a boolean expression consisting of the symbols 0,1, &, |, and ^, and a desired boolean result value result, implement a function to count the number of ways of parenthesizing the expression such that it evaluates to result.]]
-
-
 ** Chapter 10| Scalability and Memory Limits
-
+*** 解题步骤
+1. Make Believe
+   假设使用一台机器怎样处理？
+2. Get Real
+   考虑如何在多台机器下定义问题
+3. Solve Problems
+   解决第二步中定义的问题
+举例：文档检索
