@@ -180,3 +180,25 @@ Write a program to move the disks from the first tower to the last using Stacks.
 
 [[./10.7.html][10.7 Imagine a web server for a simplified search engine. This system has 100 machines to respond to search queries,which may then call out using processSearch (string query) to another cluster of machines to actually get the result. The machine which responds to a given query is chosen at random, so you can not guarantee that the same machine will always respond to the same request. The method processSearch is very expensive. Design a caching mechanism to cache the results of the most recent queries. Be sure to explain how you would update the cache when data changes.]]
 
+** Chapter 11| Sorting and Searching
+*** Common Sorting Algorithms
+1. Bubble Sort
+2. Selection Sort
+3. Merge Sort
+4. Quick Sort
+5. Radix Sort
+*** Searching Algorithms
+- binary search
+- binary tree
+- hash table
+- ...
+
+[[./11.1.html][11.1 You are given two sorted arrays, A and B, where A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order.]]
+
+[[./11.2.html][11.2 Write a method to sort an array of strings so that all the anagrams are next to each other.]]
+
+[[./11.3.html][11.3 Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order.]]
+
+[[./11.4.html][11.4 Imagine you have a 20 GB file with one string per line. Explain bow you would sort the file.]]
+
+[[./11.5.html][11.5 Given a sorted array of strings which is interspersed with empty strings, write a method to find the location of a given string.]]

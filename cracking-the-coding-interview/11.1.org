@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.1
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-09
@@ -18,12 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+You are given two sorted arrays, A and B, where A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+给定两个有序的数组A和B，A的末尾有足够的空间存储B。写一个方法将B有序的合并到A中。
 #+END_QUOTE
 
 * 解答
+原地合并。

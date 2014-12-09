@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.3
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-09
@@ -18,12 +18,15 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+旋转数组寻找指定数。
 #+END_QUOTE
 
 * 解答
+二分，其中必有一半是有序的，据此判断。
+
+处理数字重复的情况。

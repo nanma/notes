@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.4
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-09
@@ -18,12 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Imagine you have a 20 GB file with one string per line. Explain bow you would sort the file.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+给定一个20GB大小的文件，每行有一个字符串。说明怎样对文件排序。
 #+END_QUOTE
 
 * 解答
+外部排序，合并。

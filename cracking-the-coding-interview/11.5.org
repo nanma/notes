@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.5
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-09
@@ -18,12 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Given a sorted array of strings which is interspersed with empty strings, write a method to find the location of a given string.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+给定一个排好序的含有空字符串的字符串数组。写一个方法插好给定字符串的位置。
 #+END_QUOTE
 
 * 解答
+空字符串没法比较大小，寻找最近的非空字符串，继续二分。

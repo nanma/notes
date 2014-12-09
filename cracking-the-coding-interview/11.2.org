@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.2
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-09
@@ -18,12 +18,14 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+Write a method to sort an array of strings so that all the anagrams are next to each other.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+写一个方法排序字符串数组，使得所有的anagrams相邻。
 #+END_QUOTE
 
 * 解答
+- 普通排序，修改comparator判断相等关系
+- 用HashTable存储“等价类”，降低时间复杂度
