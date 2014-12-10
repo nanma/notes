@@ -209,5 +209,18 @@ Write a program to move the disks from the first tower to the last using Stacks.
 
 [[./11.8.html][11.8 Imagine you are reading in a stream of integers. Periodically, you wish to be able to look up the rank of a number x (the number of values less than or equal to x). Implement the data structures and algorithms to support these operations. That is, implement the method track(int x), which is called when each number is generated, and the method getRankOfNumber(int x), which returns the number of values less than or equal to x (not including x itself).]]
 
-
 ** Chapter 12| Testing
+
+* Knowledge Based
+** Chapter 13| C and C++
+** Chapter 14| JAVA
+** Chapter 15| Databases
+** Chapter 16| Threads and Locks
+
+* Additional Review Problems
+** Moderate
+[[./17.1.html][17.1]]
+[[./17.14.html][17.14]]
+** Hard
+[[./18.1.html][18.1]]
+[[./18.13.html][18.13]]
