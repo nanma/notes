@@ -202,3 +202,12 @@ Write a program to move the disks from the first tower to the last using Stacks.
 [[./11.4.html][11.4 Imagine you have a 20 GB file with one string per line. Explain bow you would sort the file.]]
 
 [[./11.5.html][11.5 Given a sorted array of strings which is interspersed with empty strings, write a method to find the location of a given string.]]
+
+[[./11.6.html][11.6 Given an MxN matrix in which each row and each column is sorted in ascending order, write a method to find an element.]]
+
+[[./11.7.html][11.7 A circus is designing a tower routine consisting of people standing atop one another's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.]]
+
+[[./11.8.html][11.8 Imagine you are reading in a stream of integers. Periodically, you wish to be able to look up the rank of a number x (the number of values less than or equal to x). Implement the data structures and algorithms to support these operations. That is, implement the method track(int x), which is called when each number is generated, and the method getRankOfNumber(int x), which returns the number of values less than or equal to x (not including x itself).]]
+
+
+** Chapter 12| Testing

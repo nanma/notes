@@ -1,0 +1,32 @@
+#+TITLE:     Cracking the Coding Interviews-Q11.7
+#+AUTHOR:    马楠（nxmanan#gmail.com）
+#+EMAIL:     nxmanan#gmail.com
+#+DATE:      2014-12-10
+#+DESCRIPTION: Cracking the Coding Interview笔记
+#+KEYWORDS: Algorithm
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: no-export
+#+HTML_LINK_HOME: http://wiki.manan.org
+#+HTML_LINK_UP: ./interview-questions.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+
+* 题目
+** 原文
+#+BEGIN_QUOTE
+A circus is designing a tower routine consisting of people standing atop one another's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.
+#+END_QUOTE
+
+** 译文
+#+BEGIN_QUOTE
+一个马戏团要设计一个每个人依次站在另一个人肩膀上的人塔节目。出b于实际原因，每个人必须比它下面的人更矮、更轻。给定马戏团成员的身高和体重，写一个方法计算塔的最大可能人数是多少。
+#+END_QUOTE
+
+* 解答
+和9.10的区别：目标不同，该题是求最大高度，本题是求最大数量。
+
+先按高度（或重量）排序，转为重量（或高度）上的最大递增子序列问题。

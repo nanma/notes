@@ -1,4 +1,4 @@
-#+TITLE:     Cracking the Coding Interviews-Q11.
+#+TITLE:     Cracking the Coding Interviews-Q11.6
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
 #+DATE:      2014-12-10
@@ -18,12 +18,13 @@
 * 题目
 ** 原文
 #+BEGIN_QUOTE
-
+ Given an MxN matrix in which each row and each column is sorted in ascending order, write a method to find an element.
 #+END_QUOTE
 
 ** 译文
 #+BEGIN_QUOTE
-
+给定一个每行和列都按递增排列的MxN矩阵，写一个方法查找元素。
 #+END_QUOTE
 
 * 解答
+从右上向左下查找：O(M + N);
