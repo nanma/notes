@@ -1,0 +1,38 @@
+#+TITLE:     使用Org mode画图
+#+AUTHOR:    马楠
+#+EMAIL:     nxmanan@gmail.com
+#+DATE:      2014-12-20
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
+#+OPTIONS: html-preamble:t html-scripts:t html-style:t
+#+OPTIONS: html5-fancy:nil tex:t
+#+OPTIONS: H:3 num:nil toc:t
+#+OPTIONS: ^:{} #不对下划线_进行直接转义
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
+#+HTML_CONTAINER: div
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
+#+HTML_HEAD_EXTRA:
+#+HTML_LINK_HOME: http://manan.org
+#+HTML_LINK_UP: ./org_mode.html
+#+HTML_MATHJAX:
+#+INFOJS_OPT:
+#+LATEX_HEADER:
+
+#+begin_src dot :file index-code.svg :cmdline -Kdot -Tsvg
+digraph lucene {
+  node [shape=plaintext, width=.6, height=.1]
+//  node [shape=box, width=.6, height=.1]
+  af [label=<<FONT COLOR="red">Document</FONT>.add(Field)>]
+  ad [label=<<FONT COLOR="red">IndexWriter</FONT>.addDocument(Document)>]
+  f [label=<<FONT COLOR="red">Field</FONT>(FieldName, FieldContent, <br/>Field::STORE_YES | Field::INDEX_TOKENIZED)>]
+  f -> af
+  af -> ad
+  a [label=<writer = IndexWriter(IndexPath, <FONT COLOR="red">Analyzer</FONT>)>]
+  a -> ad
+  ad -> "IndexWriter.close()"
+}
+#+end_src
+
+#+attr_html: :width 500px
+#+results:
+[[file:index-code.svg]]
