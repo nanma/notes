@@ -1,0 +1,3 @@
+@startuml
+lucene::util::NamedObject <|-- Field
+@enduml

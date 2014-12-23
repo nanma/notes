@@ -15,6 +15,14 @@
 #+HTML_LINK_UP: http://manan.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
+* CLucene代码结构
+#+attr_html: :width 500px
+[[./chart/clucene.png]]
+
+core目录示意图：
+#+attr_html: :height 350px
+[[./chart/core.svg]]
+
 * Lucene索引过程
 
 #+attr_html: :width 500px
@@ -24,3 +32,9 @@
 
 #+attr_html: :width 550px
 [[./chart/index-code.svg]]
+
+[[./chart/t.svg]]
+* 类
+** Field
+
+[[./chart/field.svg]]

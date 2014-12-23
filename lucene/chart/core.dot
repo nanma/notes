@@ -1,0 +1,23 @@
+digraph core {
+        rankdir=LR              //从左向右排列
+        Node [shape=box, width=0.2, height=0.2]
+        core [label="core"]
+        an [label="analysis"]
+        dbg [label="debug"]
+        doc [label="document"]
+        ind [label="index"]
+        qp [label="queryParser"]
+        sea [label="search"]
+        st [label="store"]
+        ut [label="util"]
+        core -> an 
+        core -> dbg
+        core -> doc
+        core -> ind
+        core -> qp 
+        core -> sea
+        core -> st 
+        core -> ut
+}
+
+        
