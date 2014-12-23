@@ -33,8 +33,8 @@ core目录示意图：
 #+attr_html: :width 550px
 [[./chart/index-code.svg]]
 
-[[./chart/t.svg]]
 * 类
 ** Field
 
+#+attr_html: :width 200px
 [[./chart/field.svg]]
