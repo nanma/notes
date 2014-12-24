@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Lucene笔记</title>
-<!-- 2014-12-23 二 20:54 -->
+<!-- 2014-12-24 三 16:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -154,7 +154,14 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2">Lucene索引过程</a></li>
 <li><a href="#sec-3">类</a>
 <ul>
-<li><a href="#sec-3-1">Field</a></li>
+<li><a href="#sec-3-1">document</a>
+<ul>
+<li><a href="#sec-3-1-1">Field</a></li>
+<li><a href="#sec-3-1-2">Document</a></li>
+<li><a href="#sec-3-1-3">Tools</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -206,11 +213,150 @@ core目录示意图：
 <h2 id="sec-3">类</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Field</h3>
+<h3 id="sec-3-1">document</h3>
 <div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Field</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+域Field是文档Document的一节，每个Field包含两部分，名称name和值value。域可以是以String或Reader方式提供的文本，或是原子化的关键词。这些关键词可以表示日期，url等。Field可以保存在索引index中，这样它们有可能在查询时被命中。
+</p>
+
 
 <div class="figure">
-<p><img src="./chart/field.svg" alt="field.svg" width="200px" />
+<p><img src="./chart/field.svg" alt="field.svg" />
+</p>
+</div>
+</div>
+
+<ul class="org-ul"><li>Enum说明<br  /><div class="outline-text-5" id="text-3-1-1-1">
+<ul class="org-ul">
+<li>Store
+<ul class="org-ul">
+<li>STORE_YES：存储原始内容，不解析
+</li>
+<li>SOTRE_NO：不存储内容
+</li>
+<li>STORE_COMPRESS=4：以压缩后的形式存储域的内容，特别适用于长文档和值为二进制的域
+</li>
+</ul>
+</li>
+<li>Index
+<ul class="org-ul">
+<li>INDEX_NO=16：不索引该域，不能搜索，但如果STORE_YES仍可以获得该域内容
+</li>
+<li>INDEX_TOKENIZED=32：使用analyzer分析该域，并索引
+</li>
+<li>INDEX_UNTOKENIZED=64：不使用analyzer，并索引，适合查询唯一的Id如产品编号                                                             
+</li>
+<li>INDEX_NONORMS=128：索引，但不使用analyzer，并且不存储归一因子（norm）。
+<ul class="org-ul">
+<li>没有norm意味着不进行索引时提权和域长度归一化
+</li>
+<li>优点是内存占用更小，因为对索引中文档的每个索引域需要一个字节来存储norm
+</li>
+<li>如果开始建立索引时存储了norm，那么以后禁止norm将无效；也就是说如果要NO_NORMS生效，这个域的所有实例必须在最开始就使用NO_NORMS
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TermVevtor
+<ul class="org-ul">
+<li>TERMVECTOR_NO=256：不存储词向量
+</li>
+<li>TERMVECTOR_YES=512,
+<ul class="org-ul">
+<li>存储每个文档的词向量（term vectors）。词向量是一个列表，存储文档的词项和词项在该文档中的出现次数
+</li>
+</ul>
+</li>
+<li>TERMVECTOR_WITH_POSITIONS = TERMVECTOR_YES | 1024
+<ul class="org-ul">
+<li>存储词向量和每个token的位置信息
+</li>
+</ul>
+</li>
+<li>TERMVECTOR_WITH_OFFSETS = TERMVECTOR_YES | 2048
+<ul class="org-ul">
+<li>存储词向量和token的偏置（offset）信息
+</li>
+</ul>
+</li>
+<li>TERMVECTOR_WITH_POSITIONS_OFFSETS = TERMVECTOR_WITH_OFFSETS | TERMVECTOR_WITH_POSITIONS
+<ul class="org-ul">
+<li>存储词向量+token位置+token偏置信息
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+
+
+<li>FieldSelector<br  /><div class="outline-text-5" id="text-3-1-1-2">
+<p>
+FieldSelector用于决定用IndexReader加载document时，文档的哪些field被加载。
+</p>
+
+
+<div class="figure">
+<p><img src="./chart/field-selector.svg" alt="field-selector.svg" />
+</p>
+</div>
+</div>
+</li></ul>
+</div>
+
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">Document</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+文档Document是索引和检索的基本单元。一个Document由一组域构成。
+</p>
+
+
+<div class="figure">
+<p><img src="./chart/document.svg" alt="document.svg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3">Tools</h4>
+<div class="outline-text-4" id="text-3-1-3">
+
+<div class="figure">
+<p><img src="./chart/tools.svg" alt="tools.svg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">analysis</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Token类图：
+</p>
+
+
+<div class="figure">
+<p><img src="./chart/token.svg" alt="token.svg" />
+</p>
+</div>
+
+<p>
+Analyzer类图：
+</p>
+
+
+<div class="figure">
+<p><img src="./chart/analyzer.svg" alt="analyzer.svg" />
 </p>
 </div>
 </div>
@@ -220,8 +366,8 @@ core目录示意图：
 <div id="postamble" class="status">
 <p class="date">Date: 2014-12-22</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2014-12-23 二 20:54</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2014-12-24 三 16:59</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7b)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

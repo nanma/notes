@@ -1,3 +1,41 @@
 @startuml
 lucene::util::NamedObject <|-- Field
+
+Class Field {
+
+  +Bool lazy
+  #void * fieldsData
+  #ValueType valueType
+  #const TCHAR* _name
+  #uint32_t config
+  #float_t boost
+}
+
+enum Store {
+     STORE_YES=1
+     STORE_NO=2
+     STORE_COMPRESS=4
+}
+
+enum Index {
+     INDEX_NO=16
+     INDEX_TOKENIZED=32
+     INDEX_UNTOKENIZED=64
+     INDEX_NONORMS=128
+}
+enum TermVector{ 
+     TERMVECTOR_NO=256,
+     TERMVECTOR_YES=512,
+     TERMVECTOR_WITH_POSITIONS = \nTERMVECTOR_YES | 1024,                    
+     TERMVECTOR_WITH_OFFSETS = \nTERMVECTOR_YES | 2048,                      
+     TERMVECTOR_WITH_POSITIONS_OFFSETS = \nTERMVECTOR_WITH_OFFSETS |\n TERMVECTOR_WITH_POSITIONS 
+}
+
+enum ValueType {                                                          
+    VALUE_NONE = 0
+    VALUE_STRING = 1
+    VALUE_READER = 2
+    VALUE_BINARY = 4
+    VALUE_TOKENSTREAM = 8
+}        
 @enduml
