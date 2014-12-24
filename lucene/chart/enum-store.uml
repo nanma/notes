@@ -1,0 +1,6 @@
+@startuml
+enum Store {
+     STORE_YES=1
+     STORE_NO=2
+}
+@enduml

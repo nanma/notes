@@ -1,0 +1,12 @@
+@startuml
+Document::LUCENE_BASE <|-- Document
+
+Class Document {
+      - FieldsType* _fields
+      - float_t boost
+      + set/get Boost()
+      + add/remove/get Field()
+      + clear()
+}
+
+@enduml

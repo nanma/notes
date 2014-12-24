@@ -1,0 +1,20 @@
+@startuml
+abstract FieldSelector {
+      + enum FieldSelectorResult {}
+      + virtual accept()
+}
+
+Class LoadFirstFieldSelector {
+      + accept()      
+}
+
+Class MapFieldSelector {
+      + FieldSelectionsType* fieldSelections
+      + accpet()
+      + add()
+}
+
+FieldSelector <|-- LoadFirstFieldSelector
+FieldSelector <|-- MapFieldSelector
+
+@enduml

@@ -1,0 +1,6 @@
+digraph Store {
+        rankdir=LR
+        s [label="enum Store"]
+        s -> "STORE_YES=1"
+        s -> "STORE_NO=2"
+}

@@ -1,0 +1,90 @@
+@startuml
+Class Token:LUCENE_BASE {
+
+}
+
+Abstract TokenStream {
+      + {abstract} Token* next()
+}
+
+Abstract Tokenizer {
+         + Reader* input
+}
+
+TokenStream <|-- Tokenizer  
+
+Abstract TokenFilter {
+         + TokenStream* input
+}
+
+TokenStream <|-- TokenFilter
+
+Abstract CharTokenize {
+      - int32_t offset, bufferIndex, dataLen
+      - TCHAR buffer[]
+      - const TCHAR* ioBuffer
+      # {abstract} bool isTokenChar()
+      # {abstract} TCHAR normalize()
+      + Token* next()
+}
+
+Tokenizer <|-- CharTokenize
+
+Class LetterTokenizer {
+      # bool isTokenChar()
+}
+CharTokenize <|-- LetterTokenizer
+
+Class LowerCaseTokenizer {
+      # TCHAR normalize()      
+}
+
+LetterTokenizer <|-- LowerCaseTokenizer
+
+Class WhitespaceTokenizer {
+      # bool isTokenChar()
+}
+
+CharTokenize <|-- WhitespaceTokenizer
+
+Class LowerCaseFilter {
+      + Token* next()
+}
+
+TokenFilter <|-- LowerCaseFilter
+
+Class StopFilter {
+      - CLTCSetList* stopWords
+      - bool deleteStopTable
+      - bool enablePositionIncrements
+      - bool ignoreCase
+      + Token* next()
+}
+
+TokenFilter <|-- StopFilter
+
+Class ISOLatin1AccentFilter { 
+      + Token* next()
+}
+
+TokenFilter <|-- ISOLatin1AccentFilter
+
+Class KeywordTokenizer {
+      - bool done
+      - int bufferSize
+      + Token* next()
+}
+
+Tokenizer <|-- KeywordTokenizer
+
+
+Class LengthFilter {
+      - size_t _min
+      - size_t _max
+      + Token* next()
+}
+
+TokenFilter <|-- LengthFilter
+
+
+@enduml

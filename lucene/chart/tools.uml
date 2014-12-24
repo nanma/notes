@@ -1,0 +1,24 @@
+@startuml
+LUCENE_BASE <|-- NumberTools
+
+Class DateTools {
+      + timeToString()
+      + stringToTime()
+      + stringToDate()
+      + getTime()
+}
+
+note right of DateTools
+     用于日期格式的转换
+end note
+
+Class NumberTools {
+      + longToString()
+      + stringToLong()
+}
+
+note left of NumberTools
+     用于long和String的互相转换
+end note
+@enduml
+

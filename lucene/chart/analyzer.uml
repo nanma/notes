@@ -1,0 +1,42 @@
+@startuml
+Abstract Analyzer {
+      + {abstract} TokenStream* tokenStream()
+}
+
+Class WhitespaceAnalyzer {
+      + TokenStream* tokenStream()
+}
+
+Analyzer <|-- WhitespaceAnalyzer
+
+Class SimpleAnalyzer {
+      + TokenStream* tokenStream()
+}
+
+Analyzer <|-- SimpleAnalyzer
+
+Class StopAnalyzer {
+      - CLTCSetList* stopTable
+      - class SavedStreams
+      + {static} TCHAR* ENGLISH_STOP_WORDS[]
+      + TokenStream* tokenStream()
+
+}
+
+Analyzer <|-- StopAnalyzer
+
+Class PerFieldAnalyzerWrapper {
+      - Analyzer* defaultAnalyzer
+      - AnalyzerMapType* analyzerMap
+      + TokenStream* tokenStream()
+}
+
+Analyzer <|-- PerFieldAnalyzerWrapper
+
+Class KeywordAnalyzer {
+      + TokenStream* tokenStream()
+}
+
+Analyzer <|-- KeywordAnalyzer
+
+@enduml

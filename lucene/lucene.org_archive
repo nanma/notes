@@ -1,0 +1,19 @@
+
+Archived entries from file /home/manan/workspace/notes/lucene/lucene.org
+
+
+* Enum说明
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2014-12-24 三 10:09
+  :ARCHIVE_FILE: ~/workspace/notes/lucene/lucene.org
+  :ARCHIVE_OLPATH: 类/Field
+  :ARCHIVE_CATEGORY: lucene
+  :END:
+- Store
+  - STORE_YES：存储原始内容，不解析
+  - SOTRE_NO：不存储内容
+- Index
+  - INDEX_NO=16：
+  - INDEX_TOKENIZED=32                                                               
+  - INDEX_UNTOKENIZED=64                                                             
+  - INDEX_NONORMS=128
