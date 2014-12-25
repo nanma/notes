@@ -19,5 +19,3 @@ digraph core {
         core -> st 
         core -> ut
 }
-
-        

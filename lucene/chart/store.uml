@@ -1,0 +1,28 @@
+@startuml
+abstract IndexOutput {
+  + {abstract} void writeByte()
+  + {abstract} void writeXXX()
+  + {abstract} int64_t getFilePointer()
+  + {abstract} void seek()
+}
+
+Class BufferedIndexOutput {
+  - uint8_t* buffer
+  - int64_t bufferStart
+  - int32_t bufferPosition
+  + void writeXXX()
+}
+
+IndexOutput <|-- BufferedIndexOutput
+
+abstract IndexInput {
+  + {abstract} void readBytes()
+}
+
+class BufferedIndexInput {
+  + void readBytes()
+}
+
+IndexInput <|-- BufferedIndexInput
+
+@enduml

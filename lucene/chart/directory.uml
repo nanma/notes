@@ -1,9 +1,16 @@
 @startuml
-abstact Directory {
+abstract Directory {
   + char** list()
   + {abstract} bool openInput()
   + {abstract} bool deleteFile()
   + {abstract} IndexOutput* createOutput()
   + {abstract} void close()
 }
+
+Class FSDirectory {
+
+}
+
+Directory <|-- FSDirectory
+
 @enduml

@@ -1,5 +1,5 @@
 @startuml
-Document::LUCENE_BASE <|-- Document
+LUCENE_BASE <|-- Document
 
 Class Document {
       - FieldsType* _fields

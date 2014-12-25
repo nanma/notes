@@ -1,0 +1,56 @@
+@startuml
+Abstract TokenStream {
+      + {abstract} Token* next()
+}
+
+Abstract TokenFilter {
+         + TokenStream* input
+}
+
+TokenStream <|-- TokenFilter
+
+Class LowerCaseFilter {
+      + Token* next()
+}
+
+TokenFilter <|-- LowerCaseFilter
+
+Class StopFilter {
+      - CLTCSetList* stopWords
+      - bool deleteStopTable
+      - bool enablePositionIncrements
+      - bool ignoreCase
+      + Token* next()
+}
+
+TokenFilter <|-- StopFilter
+
+Class ISOLatin1AccentFilter { 
+      + Token* next()
+}
+
+TokenFilter <|-- ISOLatin1AccentFilter
+
+Class LengthFilter {
+      - size_t _min
+      - size_t _max
+      + Token* next()
+}
+
+TokenFilter <|-- LengthFilter
+
+Class CachingTokenFilter {
+      - bool bCacheInitialized;
+      - std::list<Token *> cache;
+      - std::list<Token *>::iterator itCache;
+      + Token* next()
+}
+
+TokenFilter <|-- CachingTokenFilter
+
+Class StandardFilter {
+      + Token* next()  
+}
+
+TokenFilter <|- StandardFilter
+@enduml

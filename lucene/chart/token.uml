@@ -13,12 +13,6 @@ Abstract Tokenizer {
 
 TokenStream <|-- Tokenizer  
 
-Abstract TokenFilter {
-         + TokenStream* input
-}
-
-TokenStream <|-- TokenFilter
-
 Abstract CharTokenize {
       - int32_t offset, bufferIndex, dataLen
       - TCHAR buffer[]
@@ -47,28 +41,6 @@ Class WhitespaceTokenizer {
 
 CharTokenize <|-- WhitespaceTokenizer
 
-Class LowerCaseFilter {
-      + Token* next()
-}
-
-TokenFilter <|-- LowerCaseFilter
-
-Class StopFilter {
-      - CLTCSetList* stopWords
-      - bool deleteStopTable
-      - bool enablePositionIncrements
-      - bool ignoreCase
-      + Token* next()
-}
-
-TokenFilter <|-- StopFilter
-
-Class ISOLatin1AccentFilter { 
-      + Token* next()
-}
-
-TokenFilter <|-- ISOLatin1AccentFilter
-
 Class KeywordTokenizer {
       - bool done
       - int bufferSize
@@ -77,14 +49,10 @@ Class KeywordTokenizer {
 
 Tokenizer <|-- KeywordTokenizer
 
-
-Class LengthFilter {
-      - size_t _min
-      - size_t _max
+Class StandardTokenizer {
       + Token* next()
 }
 
-TokenFilter <|-- LengthFilter
-
+Tokenizer <|- StandardTokenizer
 
 @enduml

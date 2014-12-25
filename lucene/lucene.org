@@ -85,6 +85,22 @@ Token类图：
 
 [[./chart/token.svg]]
 
+[[./chart/token-filter.svg]]
+
 Analyzer类图：
 
 [[./chart/analyzer.svg]]
+** index
+*** IndexWriter
+[[./chart/index-writer.svg]]
+
+** store
+*** Directory
+
+[[./chart/directory.svg]]
+
+*** IndexOutput/IndexInput
+
+[[./chart/store.svg]]
+
+
