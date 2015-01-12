@@ -8,7 +8,7 @@
 #+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+OPTIONS: ^:{} #不对下划线_进行直接转义
-#+INFOJS_OPT: view:nil toc: ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+INFOJS_OPT: view:info toc:t ltoc:t mouse:underline buttons:0 path:../style/org-info.js
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: no-export
 #+HTML_LINK_HOME: http://manan.org
@@ -33,6 +33,64 @@ core目录示意图：
 #+attr_html: :width 550px
 [[./chart/index-code.svg]]
 
+索引过程：
+1. 抽取本文，生成document
+2. 分析Analysis
+   - 源tokens经过一系列filter的修改，构成了analyzer
+   - 分析过程生成了将写入索引的index流
+3. 生成倒排索引
+
+** 索引文件结构
+
+每份Lucene索引由多个段（segment）组成，如下图所示：
+#+attr_html: :width 250px
+[[./chart/segment.svg]]
+
+每个段是一份独立的索引，保存所有被索引文档的一个子集。当writer 刷新缓存的新写入文档和待删除文档时，生成新的段。在检索时，每个段被单独检索，所有的结果被合并返回。
+
+每个段由多个文件组成，文件名形式为：_X.<ext>，其中X是段的名字，ext是扩展名。不同的扩展名代表索引段的不同部分。如果使用复合文件格式（compound, IndexWriter.setUseCompoundFile），则段内的大部分文件将合为一个文件，_X.cfs。这将减少检索时打开的文件描述符个数。
+
+有一个特殊的段文件，segments_<N>，它引用所有的段。这个文件非常重要，Lucene每次首先打开它然后再打开它引用的其他段文件。值<N>称作『generation』，每次有变化提交到索引中时递增1。
+
+随着时间增加，段的数量将不断增加。IndexWriter会周期性的选择段进行合并，并删除旧的段。
+
+** 基本索引操作
+1. 添加文档到索引
+   - addDocument(Document)
+   - addDocument(Document, Analyzer)
+2. 删除文档
+   - deleteDocuments(Term)
+   - deleteDocuments(Term[])
+   - deleteDocuments(Query)
+   - deleteDocuments(Query[])
+   - deleteDocuments(Query[])
+   - deleteAll()
+3. 更新文档
+   - updateDocument(Term, Document)
+   - updateDocument(Term, Document, Analyzer)
+更新文档实际上先删除包含Term的文档，然后再写入新的文档。不能在原有文档上更新。
+
+** 域选项 Field options
+*** 索引选项indexing
+索引选项控制域中的文本在倒排索引中索引方式。
+- Index.ANALYZED
+  使用analyzer将域中的文本分成分开的词，使得每个词可以被检索
+- Index.NOT_ANALYZED
+  索引该域，但不分析，将所有内容作为整体进行索引
+- Index.ANALYZED_NO_NORMS
+  Index.ANALYZED的变种，但是不在索引中存储归一化信息。归一化保存了索引时的加权信息，但是检索时会消耗更多内存。（LIA 2.5.3）
+- Index.NOT_ANALYZED_NO_NORMS
+  同上
+- Index.NO
+  该域的内容不可搜索
+*** 存储选项storing
+- Store.YES
+  存储域，原始内容将保存在索引中，可以由IndexReader读取。适用于需要在检索结果中展示的内容，比如域名、标题等。
+- Store.NO
+  不存储域内容
+
+
+
 * 类
 ** document
 *** Field
@@ -48,7 +106,7 @@ core目录示意图：
 - Index
   - INDEX_NO=16：不索引该域，不能搜索，但如果STORE_YES仍可以获得该域内容
   - INDEX_TOKENIZED=32：使用analyzer分析该域，并索引
-  - INDEX_UNTOKENIZED=64：不使用analyzer，并索引，适合查询唯一的Id如产品编号                                                             
+  - INDEX_UNTOKENIZED=64：不使用analyzer，并索引，适合查询唯一的Id如产品编号
   - INDEX_NONORMS=128：索引，但不使用analyzer，并且不存储归一因子（norm）。
     - 没有norm意味着不进行索引时提权和域长度归一化
 	- 优点是内存占用更小，因为对索引中文档的每个索引域需要一个字节来存储norm
@@ -102,5 +160,3 @@ Analyzer类图：
 *** IndexOutput/IndexInput
 
 [[./chart/store.svg]]
-
-

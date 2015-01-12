@@ -1,0 +1,12 @@
+digraph segment {
+        rankdir=LR
+        seg_n [label=segments_N, shape=plaintext]
+        0 [label="Segment 0", shape=box, height=0.1, color="#ccebc5", style=filled] //pastel19 color scheme
+        1 [label="Segment 1", shape=box, height=0.1, color="#ccebc5", style=filled]
+        2 [label="Segment 2", shape=box, height=0.1, color="#ccebc5", style=filled]
+        3 [label="Segment 3", shape=box, height=0.1, color="#ccebc5", style=filled]
+        seg_n -> 0
+        seg_n -> 1
+        seg_n -> 2
+        seg_n -> 3
+}
