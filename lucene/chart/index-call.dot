@@ -1,0 +1,11 @@
+digraph index {
+        node [shape=plaintext, width=.6, height=.1]
+        ad [label="index/IndexWriter.cpp\n IndexWriter::addDocument"]
+        dw [label="index/DocumentsWriter.cpp\n docWriter->addDocument(doc, analyzer)"]
+        pd [label="index/DocumentsWriterThreadState.cpp\n state->processDocument(analyzer)"]
+        pf [label="def: index/_DocumentsWriter.h\n (imp: index/DocumentsWriterThreadState.cpp\n void DocumentsWriter::ThreadState::FieldData::processField)\n  fieldDataArray[i]->processField(analyzer)"]
+        edge[color="#d73027"] //color rdylbu9
+        ad -> dw 
+        dw -> pd
+        pd -> pf
+}

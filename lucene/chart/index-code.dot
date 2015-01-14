@@ -1,0 +1,12 @@
+digraph lucene {
+  node [shape=plaintext, width=.6, height=.1]
+//  node [shape=box, width=.6, height=.1]
+  af [label=<<FONT COLOR="#d73027">Document</FONT>.add(Field)>]
+  ad [label=<<FONT COLOR="#d73027">IndexWriter</FONT>.addDocument(Document)>]
+  f [label=<<FONT COLOR="#d73027">Field</FONT>(FieldName, FieldContent, <br/>Field::STORE_YES | Field::INDEX_TOKENIZED)>]
+  f -> af
+  af -> ad
+  a [label=<writer = IndexWriter(IndexPath, <FONT COLOR="#d73027">Analyzer</FONT>)>]
+  a -> ad
+  ad -> "IndexWriter.close()"
+}

@@ -1,0 +1,10 @@
+digraph process {
+        rankdir=LR
+        node [shape=plaintext, width=.6, height=.1]
+        pf [label="FieldData::processField()"]
+        if [label="invertField()"]
+        wf [label="writeField()"]
+        edge[color="#d73027"]
+        pf -> if[label="if (field->isIndexed())"]
+        pf -> wf[label="if(field->isStored())"]
+}

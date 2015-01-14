@@ -24,7 +24,7 @@ core目录示意图：
 [[./chart/core.svg]]
 
 * Lucene索引过程
-
+** 索引过程
 #+attr_html: :width 500px
 [[./chart/index.svg]]
 
@@ -39,6 +39,13 @@ core目录示意图：
    - 源tokens经过一系列filter的修改，构成了analyzer
    - 分析过程生成了将写入索引的index流
 3. 生成倒排索引
+
+代码调用过程：
+#+attr_html: :width 400px
+[[./chart/index-call.svg]]
+
+#+attr_html: :width 500px
+[[./chart/process-field.svg]]
 
 ** 索引文件结构
 
@@ -88,7 +95,35 @@ core目录示意图：
   存储域，原始内容将保存在索引中，可以由IndexReader读取。适用于需要在检索结果中展示的内容，比如域名、标题等。
 - Store.NO
   不存储域内容
+*** 词向量选项 Term vectors
+词向量是域中词项组成的向量。可以用于高亮文本，查找相似文档等。
+- TermVector.YES
+  存储每个文档出现过的词项和出现次数，不保存位置和偏移信息
+- TermVector.WITH_POSITIONS
+  存储每个文档出现过的词项，出现次数，和每个词出现的位置
+- TermVector.WITH_OFFSETS
+  存储每个文档出现过的词项，出现次数，和每个词出现时的偏移信息（开始和结束字符的位置）。
 
+  偏移和位置有什么区别？
+- TermVector.WITH_POSITIONS_OFFSETS
+  存储每个文档出现过的词项，出现次数，位置和偏移信息
+- TermVector.NO
+  不保存词向量
+
+只有Index.YES时才能设置TermVector.YES。
+
+** 为文档和域加权 boosting
+可以对文档和域进行加权，分为索引时和检索时加权。
+*** 文档加权
+#+BEGIN_SRC
+doc.setBoost(1.5F)
+#+END_SRC
+*** 域加权
+#+BEGIN_SRC
+Field.setBoost(1.2F);
+#+END_SRC
+*** Norms
+在索引时，文档每个域的所有加权会合并成一个float数字。每个域的所有加权会被编码成一个字节，在检索时被检索的域的norms会加载到内容中，解码成单精度数，在计算相关度时使用。
 
 
 * 类
