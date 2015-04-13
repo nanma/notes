@@ -1,0 +1,19 @@
+@startuml
+Class NamedObject 
+
+Abstract IndexReader {
+  # {abstract} void doClose()
+  # {abstract} void doDelete()
+  # {abstract} void doCommit()
+  + Internal* _internal
+  + {static} IndexReader* open()
+  + {abstract} void flush()
+  + {abstract} TermFreqVector* getTermFreqVector
+  + {abstract} int32_t numDocs()
+  + {abstract} int32_t maxDoc()
+  + ...()
+}
+
+NamedObject <|-- IndexReader
+
+@enduml

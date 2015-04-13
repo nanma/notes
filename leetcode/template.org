@@ -1,7 +1,7 @@
 #+TITLE:     LeetCode-
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-12
+#+DATE:      2015-4-2
 #+DESCRIPTION: LeetCode笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en

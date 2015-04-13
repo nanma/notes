@@ -1,7 +1,7 @@
-#+TITLE:     LeetCode-Single number
+#+TITLE:     LeetCode-Longest Substring Without Repeating Characters
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-12
+#+DATE:      2015-4-2
 #+DESCRIPTION: LeetCode笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -17,17 +17,13 @@
 
 * 题目
 ** 地址
-https://oj.leetcode.com/problems/single-number/
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 ** 原文
 #+BEGIN_QUOTE
-Given an array of integers, every element appears twice except for one. Find that single one.
-
-Note:
-
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 #+END_QUOTE
 
 * 解答
-1. 比特操作
-2. 哈希表
+- 记录过去字符出现的位置，重复后从该字符后接着匹配
+- 贪心

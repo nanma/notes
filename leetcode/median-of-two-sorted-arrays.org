@@ -1,7 +1,7 @@
-#+TITLE:     LeetCode-Single number
+#+TITLE:     LeetCode-Median of Two Sorted Arrays
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-12
+#+DATE:      2015-4-2
 #+DESCRIPTION: LeetCode笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -17,17 +17,15 @@
 
 * 题目
 ** 地址
-https://oj.leetcode.com/problems/single-number/
+https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 ** 原文
 #+BEGIN_QUOTE
-Given an array of integers, every element appears twice except for one. Find that single one.
-
-Note:
-
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 #+END_QUOTE
 
 * 解答
-1. 比特操作
-2. 哈希表
+- 基本解法：归并，复杂度O(m+n)；
+- 二分查找思想：
+  - 寻找第k大的数
+  - 比较两个数组第k/2-1处元素，每次排除掉一个数组的一部分

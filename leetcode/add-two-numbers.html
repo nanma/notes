@@ -3,8 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>LeetCode-Single number</title>
-<!-- 2015-04-02 四 10:35 -->
+<title>LeetCode-Add Two Numbers</title>
+<!-- 2015-04-02 四 15:27 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -145,7 +145,7 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="http://wiki.manan.org"> HOME </a>
 </div><div id="content">
-<h1 class="title">LeetCode-Single number</h1>
+<h1 class="title">LeetCode-Add Two Numbers</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -168,7 +168,7 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-1">地址</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-<a href="https://oj.leetcode.com/problems/single-number/">https://oj.leetcode.com/problems/single-number/</a>
+<a href="https://leetcode.com/problems/add-two-numbers/">https://leetcode.com/problems/add-two-numbers/</a>
 </p>
 </div>
 </div>
@@ -178,15 +178,15 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
-Given an array of integers, every element appears twice except for one. Find that single one.
+You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 </p>
 
 <p>
-Note:
+Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
 </p>
 
 <p>
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+Output: 7 -&gt; 0 -&gt; 8
 </p>
 </blockquote>
 </div>
@@ -196,19 +196,22 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">解答</h2>
 <div class="outline-text-2" id="text-2">
-<ol class="org-ol">
-<li>比特操作
+<p>
+基本链表操作。
+</p>
+<ul class="org-ul">
+<li>用尾插法在循环结束处链接节点，可以减少条件判断数量，提高代码易读性
 </li>
-<li>哈希表
+<li>用三元表达式减少if语句，代码更简练
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2014-12-12</p>
+<p class="date">Date: 2015-4-2</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2015-04-02 四 10:35</p>
+<p class="date">Created: 2015-04-02 四 15:27</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

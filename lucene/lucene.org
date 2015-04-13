@@ -6,7 +6,7 @@
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
 #+OPTIONS: H:3 num:nil toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+OPTIONS: ^:{} #不对下划线_进行直接转义
 #+INFOJS_OPT: view:info toc:t ltoc:t mouse:underline buttons:0 path:../style/org-info.js
 #+EXPORT_SELECT_TAGS: export
@@ -46,6 +46,10 @@ core目录示意图：
 
 #+attr_html: :width 500px
 [[./chart/process-field.svg]]
+
+=invertField()= 判断域是否需要分词，如果不需要则直接建立索引，否则先调用analyzer分词然后建立索引。
+
+=writeField()= 将域原始内容写入索引。
 
 ** 索引文件结构
 
@@ -125,7 +129,62 @@ Field.setBoost(1.2F);
 *** Norms
 在索引时，文档每个域的所有加权会合并成一个float数字。每个域的所有加权会被编码成一个字节，在检索时被检索的域的norms会加载到内容中，解码成单精度数，在计算相关度时使用。
 
+* Lucene检索过程
+** 检索代码示意
+#+attr_html: :width 600px
+[[./chart/search-code.svg]]
 
+- 解析查询
+#+attr_html: :width 650px
+[[./chart/query-parser.svg]]
+
+上面的图示中从Direcotry直接创建IndexSearcher，然后执行搜索。实际上IndexSearcher通过IndexReader与索引交互，完整的过程是：
+
+#+BEGIN_SRC c++
+IndexReader reader = IndexReader.open(dir);
+IndexSearcher searcher = new IndexSearcher(reader);
+#+END_SRC
+
+检索过程主要类的关系如图所示：
+#+attr_html: :width 300px
+[[./chart/search-relation.svg]]
+
+如果没有主动创建IndexReader，使用Directory创建IndexSearcher，则IndexSearcher会新建自己私有的IndexReader。
+
+=Dirctory= 类提供了抽象的类文件API，IndexReader使用这个API与索引文件交互。
+
+** Lucene打分过程
+下面是Lucene的相似度打分公式，用来计算查询q中所有词t与文档d的相似度分数：
+
+\[
+\sum_{t\ in\ q}\Big( tf(t\ in\ d) \times idf(t)^2\times boost(t.field\ in\ d)\times lengthNorm(t.field\ in\ d) \Big)\times coord(q,d)\times queryNorm(q)
+\]
+
+详见LIA 2e Chapter 3.3.
+
+** Lucene的多种查询方式
+
+*** TermQuery
+
+*** TermRangeQuery
+
+*** NumericRangeQuery
+
+*** PrefixQuery
+
+*** BooleanQuery
+
+*** PhraseQuery
+
+*** WildcardQuery
+
+*** FuzzyQuery
+
+*** MatchAllDocsQuery
+
+* Lucene分析过程 analysis
+* 高级搜索技术
+* 扩展搜索
 * 类
 ** document
 *** Field
@@ -185,7 +244,15 @@ Analyzer类图：
 [[./chart/analyzer.svg]]
 ** index
 *** IndexWriter
+#+attr_html: :width 800px
 [[./chart/index-writer.svg]]
+
+#+attr_html: :width 250px
+[[./chart/index-reader.svg]]
+
+# *** DocumentWriter
+
+# [[./chart/doc-writer.svg]]
 
 ** store
 *** Directory

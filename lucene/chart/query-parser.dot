@@ -1,0 +1,12 @@
+digraph search {
+  node [shape=plaintext, width=.6, height=.1]
+  dr [label=<<FONT COLOR="#d73027">Directory </FONT> dir = FSDirectory.open(new File("./index"))>]
+  is [label=<IndexSearcher searcher = new  <FONT COLOR="#d73027">IndexSearcher</FONT>(dir)>]
+  dr -> is
+  qp [label=<parser = new <FONT COLOR="#d73027">QueryParser</FONT>(Version.LUCENE_30,<br/>"contents",<br/>new SimpleAnalyzer())>]
+  q [label=<<FONT COLOR="#d73027">Query </FONT> query = parser.parse("+JUNIT +ANT -MOCK")>]
+  qp -> q
+  td [label=<<FONT COLOR="#d73027">TopDocs </FONT> docs = searcher.search(query, 10)>]
+  q -> td
+  is -> td  
+}

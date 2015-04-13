@@ -15,8 +15,25 @@
 #+HTML_LINK_UP: ./leetcode.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
-| Title         | Note |       Date | Difficulty | Data Structure    | Algorithm |
-|---------------+------+------------+------------+-------------------+-----------|
-| [[https://oj.leetcode.com/problems/two-sum/][Two Sum]]       | [[./two-sum.html][HTML]] | 2014-12-12 | Medium     | Array, Hash table | Sort      |
-| [[https://oj.leetcode.com/problems/single-number/][Single Number]] | [[./single-number.html][HTML]] | 2014-12-12 | Medium     | Bit, Hash table   | Bit       | 
-  
+| No. | Title                         | Note |       Date | Difficulty | Data Structure    | Algorithm        |
+|-----+-------------------------------+------+------------+------------+-------------------+------------------|
+|   1 | [[https://oj.leetcode.com/problems/two-sum/][Two Sum]]                       | [[./two-sum.html][HTML]] | 2014-12-12 | Medium     | Array, Hash table | Sort             |
+|   2 | [[https://leetcode.com/problems/add-two-numbers/][Add Two Numbers]]               | [[./add-two-numbers.html][HTML]] | 2015-04-02 | Easy       | Linked list       |                  |
+|   3 | [[https://leetcode.com/problems/longest-substring-without-repeating-characters/][Longest Substring]]             | [[./https://leetcode.com/problems/longest-substring-without-repeating-characters/][HTML]] | 2015-04-02 | Medium     | Array             | Greedy Algorithm |
+|   4 | [[https://leetcode.com/problems/median-of-two-sorted-arrays/][Median of Two Sorted Arrays]]   | [[./median-of-two-sorted-arrays.html][HTML]] | 2015-04-02 | Hard       | Array             | Binary sort      |
+|   5 | [[https://leetcode.com/problems/longest-palindromic-substring/][Longest Palindromic Substring]] |      | 2015-04-03 | Medium     | String            | DP               |
+|   6 | [[https://leetcode.com/problems/zigzag-conversion/][ZigZag Conversion]]             |      | 2015-04-07 | Easy       | String            | 规律             |
+|   7 | [[https://leetcode.com/problems/reverse-integer/][Reverse Integer]]               |      | 2015-04-07 | Easy       |                   | 溢出判断         |
+|   8 | [[https://leetcode.com/problems/string-to-integer-atoi/][String to Integer]]             |      | 2015-04-07 | Easy       | String            | 多种输入         |
+|   9 | [[https://leetcode.com/problems/palindrome-number/][Palindrome Number]]             |      | 2015-04-08 | Easy       | Number            | 模运算           |
+|  10 | [[https://leetcode.com/problems/regular-expression-matching/][Regular Expression Matching]]   |      | 2015-04-08 | Hard       | String            |                  |
+|  11 | [[https://leetcode.com/problems/container-with-most-water/][Container With Most Water]]     |      | 2015-04-09 | Medium     |                   | 贪心？           |
+|  12 | [[https://leetcode.com/problems/integer-to-roman/][Integer to Roman]]              |      | 2015-04-13 | Medium     | String, Array     | 规律             |
+|  13 | [[https://leetcode.com/problems/roman-to-integer/][Roman to Integer]]              |      | 2015-04-13 | Easy       | String, Array     | 规律             |
+|  14 | [[https://leetcode.com/problems/longest-common-prefix/][Longest Common Prefix]]         |      | 2015-04-13 | Easy       | String, Array     |                  |
+|     |                               |      |            |            |                   |                  |
+
+
+
+
+| 136 | [[https://oj.leetcode.com/problems/single-number/][Single Number]]     | [[./single-number.html][HTML]] | 2014-12-12 | Medium     | Bit, Hash table   | Bit              |

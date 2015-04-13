@@ -1,0 +1,15 @@
+digraph relation {
+        rankdir=LR
+        node [shape=plaintext, width=.6, height=.1]
+        q [label="Query"]
+        is [label="IndexSearcher"]
+        td [label="TopDocs"]
+        q -> is
+        is -> td
+        ir [label="IndexReader"]
+        d [label="Directory"]
+        ind []
+        is -> ir
+        ir -> d
+        d -> ind
+}

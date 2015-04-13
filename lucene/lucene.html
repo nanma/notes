@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Lucene笔记</title>
-<!-- 2015-01-14 三 22:06 -->
+<!-- 2015-01-29 四 14:41 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="马楠（nxmanan#gmail.com）" />
@@ -210,6 +210,48 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -244,25 +286,47 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#sec-3">类</a>
+<li><a href="#sec-3">Lucene检索过程</a>
 <ul>
-<li><a href="#sec-3-1">document</a>
+<li><a href="#sec-3-1">检索代码示意</a></li>
+<li><a href="#sec-3-2">Lucene打分过程</a></li>
+<li><a href="#sec-3-3">Lucene的多种查询方式</a>
 <ul>
-<li><a href="#sec-3-1-1">Field</a></li>
-<li><a href="#sec-3-1-2">Document</a></li>
-<li><a href="#sec-3-1-3">Tools</a></li>
+<li><a href="#sec-3-3-1">TermQuery</a></li>
+<li><a href="#sec-3-3-2">TermRangeQuery</a></li>
+<li><a href="#sec-3-3-3">NumericRangeQuery</a></li>
+<li><a href="#sec-3-3-4">PrefixQuery</a></li>
+<li><a href="#sec-3-3-5">BooleanQuery</a></li>
+<li><a href="#sec-3-3-6">PhraseQuery</a></li>
+<li><a href="#sec-3-3-7">WildcardQuery</a></li>
+<li><a href="#sec-3-3-8">FuzzyQuery</a></li>
+<li><a href="#sec-3-3-9">MatchAllDocsQuery</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-2">analysis</a></li>
-<li><a href="#sec-3-3">index</a>
-<ul>
-<li><a href="#sec-3-3-1">IndexWriter</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-4">store</a>
+<li><a href="#sec-4">Lucene分析过程 analysis</a></li>
+<li><a href="#sec-5">高级搜索技术</a></li>
+<li><a href="#sec-6">扩展搜索</a></li>
+<li><a href="#sec-7">类</a>
 <ul>
-<li><a href="#sec-3-4-1">Directory</a></li>
-<li><a href="#sec-3-4-2">IndexOutput/IndexInput</a></li>
+<li><a href="#sec-7-1">document</a>
+<ul>
+<li><a href="#sec-7-1-1">Field</a></li>
+<li><a href="#sec-7-1-2">Document</a></li>
+<li><a href="#sec-7-1-3">Tools</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-2">analysis</a></li>
+<li><a href="#sec-7-3">index</a>
+<ul>
+<li><a href="#sec-7-3-1">IndexWriter</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-4">store</a>
+<ul>
+<li><a href="#sec-7-4-1">Directory</a></li>
+<li><a href="#sec-7-4-2">IndexOutput/IndexInput</a></li>
 </ul>
 </li>
 </ul>
@@ -345,6 +409,14 @@ core目录示意图：
 <p><img src="./chart/process-field.svg" alt="process-field.svg" width="500px" />
 </p>
 </div>
+
+<p>
+<code>invertField()</code> 判断域是否需要分词，如果不需要则直接建立索引，否则先调用analyzer分词然后建立索引。
+</p>
+
+<p>
+<code>writeField()</code> 将域原始内容写入索引。
+</p>
 </div>
 </div>
 
@@ -531,16 +603,136 @@ Field.setBoost(1.2F);
 </div>
 </div>
 
-
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">类</h2>
+<h2 id="sec-3">Lucene检索过程</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">document</h3>
+<h3 id="sec-3-1">检索代码示意</h3>
 <div class="outline-text-3" id="text-3-1">
-</div><div id="outline-container-sec-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1">Field</h4>
-<div class="outline-text-4" id="text-3-1-1">
+
+<div class="figure">
+<p><img src="./chart/search-code.svg" alt="search-code.svg" width="600px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>解析查询
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./chart/query-parser.svg" alt="query-parser.svg" width="650px" />
+</p>
+</div>
+
+<p>
+上面的图示中从Direcotry直接创建IndexSearcher，然后执行搜索。实际上IndexSearcher通过IndexReader与索引交互，完整的过程是：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #7CB8BB;">IndexReader</span> <span style="color: #DFAF8F;">reader</span> = IndexReader.open(dir);
+<span style="color: #7CB8BB;">IndexSearcher</span> <span style="color: #DFAF8F;">searcher</span> = <span style="color: #F0DFAF; font-weight: bold;">new</span> <span style="color: #7CB8BB;">IndexSearcher</span>(reader);
+</pre>
+</div>
+
+<p>
+检索过程主要类的关系如图所示：
+</p>
+
+<div class="figure">
+<p><img src="./chart/search-relation.svg" alt="search-relation.svg" width="300px" />
+</p>
+</div>
+
+<p>
+如果没有主动创建IndexReader，使用Directory创建IndexSearcher，则IndexSearcher会新建自己私有的IndexReader。
+</p>
+
+<p>
+<code>Dirctory</code> 类提供了抽象的类文件API，IndexReader使用这个API与索引文件交互。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">Lucene打分过程</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+下面是Lucene的相似度打分公式，用来计算查询q中所有词t与文档d的相似度分数：
+</p>
+
+<p>
+\[
+\sum_{t\ in\ q}\Big( tf(t\ in\ d) \times idf(t)^2\times boost(t.field\ in\ d)\times lengthNorm(t.field\ in\ d) \Big)\times coord(q,d)\times queryNorm(q)
+\]
+</p>
+
+<p>
+详见LIA 2e Chapter 3.3.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3">Lucene的多种查询方式</h3>
+<div class="outline-text-3" id="text-3-3">
+</div><div id="outline-container-sec-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1">TermQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-2" class="outline-4">
+<h4 id="sec-3-3-2">TermRangeQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-3" class="outline-4">
+<h4 id="sec-3-3-3">NumericRangeQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-4" class="outline-4">
+<h4 id="sec-3-3-4">PrefixQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-5" class="outline-4">
+<h4 id="sec-3-3-5">BooleanQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-6" class="outline-4">
+<h4 id="sec-3-3-6">PhraseQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-7" class="outline-4">
+<h4 id="sec-3-3-7">WildcardQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-8" class="outline-4">
+<h4 id="sec-3-3-8">FuzzyQuery</h4>
+</div>
+
+<div id="outline-container-sec-3-3-9" class="outline-4">
+<h4 id="sec-3-3-9">MatchAllDocsQuery</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Lucene分析过程 analysis</h2>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">高级搜索技术</h2>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">扩展搜索</h2>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">类</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1">document</h3>
+<div class="outline-text-3" id="text-7-1">
+</div><div id="outline-container-sec-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1">Field</h4>
+<div class="outline-text-4" id="text-7-1-1">
 <p>
 域Field是文档Document的一节，每个Field包含两部分，名称name和值value。域可以是以String或Reader方式提供的文本，或是原子化的关键词。这些关键词可以表示日期，url等。Field可以保存在索引index中，这样它们有可能在查询时被命中。
 </p>
@@ -552,7 +744,7 @@ Field.setBoost(1.2F);
 </div>
 </div>
 
-<ul class="org-ul"><li><a id="sec-3-1-1-1" name="sec-3-1-1-1"></a>Enum说明<br  /><div class="outline-text-5" id="text-3-1-1-1">
+<ul class="org-ul"><li><a id="sec-7-1-1-1" name="sec-7-1-1-1"></a>Enum说明<br  /><div class="outline-text-5" id="text-7-1-1-1">
 <ul class="org-ul">
 <li>Store
 <ul class="org-ul">
@@ -621,7 +813,7 @@ Field.setBoost(1.2F);
 </li>
 
 
-<li><a id="sec-3-1-1-2" name="sec-3-1-1-2"></a>FieldSelector<br  /><div class="outline-text-5" id="text-3-1-1-2">
+<li><a id="sec-7-1-1-2" name="sec-7-1-1-2"></a>FieldSelector<br  /><div class="outline-text-5" id="text-7-1-1-2">
 <p>
 FieldSelector用于决定用IndexReader加载document时，文档的哪些field被加载。
 </p>
@@ -635,9 +827,9 @@ FieldSelector用于决定用IndexReader加载document时，文档的哪些field�
 </li></ul>
 </div>
 
-<div id="outline-container-sec-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2">Document</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<div id="outline-container-sec-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2">Document</h4>
+<div class="outline-text-4" id="text-7-1-2">
 <p>
 文档Document是索引和检索的基本单元。一个Document由一组域构成。
 </p>
@@ -650,9 +842,9 @@ FieldSelector用于决定用IndexReader加载document时，文档的哪些field�
 </div>
 </div>
 
-<div id="outline-container-sec-3-1-3" class="outline-4">
-<h4 id="sec-3-1-3">Tools</h4>
-<div class="outline-text-4" id="text-3-1-3">
+<div id="outline-container-sec-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3">Tools</h4>
+<div class="outline-text-4" id="text-7-1-3">
 
 <div class="figure">
 <p><img src="./chart/tools.svg" alt="tools.svg" />
@@ -662,9 +854,9 @@ FieldSelector用于决定用IndexReader加载document时，文档的哪些field�
 </div>
 </div>
 
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">analysis</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2">analysis</h3>
+<div class="outline-text-3" id="text-7-2">
 <p>
 Token类图：
 </p>
@@ -692,27 +884,33 @@ Analyzer类图：
 </div>
 </div>
 </div>
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">index</h3>
-<div class="outline-text-3" id="text-3-3">
-</div><div id="outline-container-sec-3-3-1" class="outline-4">
-<h4 id="sec-3-3-1">IndexWriter</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3">index</h3>
+<div class="outline-text-3" id="text-7-3">
+</div><div id="outline-container-sec-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1">IndexWriter</h4>
+<div class="outline-text-4" id="text-7-3-1">
 
 <div class="figure">
-<p><img src="./chart/index-writer.svg" alt="index-writer.svg" />
+<p><img src="./chart/index-writer.svg" alt="index-writer.svg" width="800px" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./chart/index-reader.svg" alt="index-reader.svg" width="250px" />
 </p>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4">store</h3>
-<div class="outline-text-3" id="text-3-4">
-</div><div id="outline-container-sec-3-4-1" class="outline-4">
-<h4 id="sec-3-4-1">Directory</h4>
-<div class="outline-text-4" id="text-3-4-1">
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4">store</h3>
+<div class="outline-text-3" id="text-7-4">
+</div><div id="outline-container-sec-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1">Directory</h4>
+<div class="outline-text-4" id="text-7-4-1">
 
 <div class="figure">
 <p><img src="./chart/directory.svg" alt="directory.svg" />
@@ -721,9 +919,9 @@ Analyzer类图：
 </div>
 </div>
 
-<div id="outline-container-sec-3-4-2" class="outline-4">
-<h4 id="sec-3-4-2">IndexOutput/IndexInput</h4>
-<div class="outline-text-4" id="text-3-4-2">
+<div id="outline-container-sec-7-4-2" class="outline-4">
+<h4 id="sec-7-4-2">IndexOutput/IndexInput</h4>
+<div class="outline-text-4" id="text-7-4-2">
 
 <div class="figure">
 <p><img src="./chart/store.svg" alt="store.svg" />
@@ -737,7 +935,7 @@ Analyzer类图：
 <div id="postamble" class="status">
 <p class="date">Date: 2014-12-22</p>
 <p class="author">Author: 马楠（nxmanan#gmail.com）</p>
-<p class="date">Created: 2015-01-14 三 22:06</p>
+<p class="date">Created: 2015-01-29 四 14:41</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

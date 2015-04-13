@@ -1,7 +1,7 @@
-#+TITLE:     LeetCode-Single number
+#+TITLE:     LeetCode-Add Two Numbers
 #+AUTHOR:    马楠（nxmanan#gmail.com）
 #+EMAIL:     nxmanan#gmail.com
-#+DATE:      2014-12-12
+#+DATE:      2015-4-2
 #+DESCRIPTION: LeetCode笔记
 #+KEYWORDS: Algorithm
 #+LANGUAGE: en
@@ -17,17 +17,18 @@
 
 * 题目
 ** 地址
-https://oj.leetcode.com/problems/single-number/
+https://leetcode.com/problems/add-two-numbers/
 
 ** 原文
 #+BEGIN_QUOTE
-Given an array of integers, every element appears twice except for one. Find that single one.
+You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
-Note:
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+Output: 7 -> 0 -> 8
 #+END_QUOTE
 
 * 解答
-1. 比特操作
-2. 哈希表
+基本链表操作。
+- 用尾插法在循环结束处链接节点，可以减少条件判断数量，提高代码易读性
+- 用三元表达式减少if语句，代码更简练

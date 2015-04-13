@@ -14,21 +14,34 @@ Class IndexWriter {
 
 LUCENE_BASE <|-- IndexWriter
 
-Class NamedObject 
-
-Abstract IndexReader {
-  # {abstract} void doClose()
-  # {abstract} void doDelete()
-  # {abstract} void doCommit()
-  + Internal* _internal
-  + {static} IndexReader* open()
-  + {abstract} void flush()
-  + {abstract} TermFreqVector* getTermFreqVector
-  + {abstract} int32_t numDocs()
-  + {abstract} int32_t maxDoc()
-  + ...()
+Class DocumentsWriter {
+  - IndexWriter* writer
+  - Directory* directory
+  - FieldsWriter* fieldsWriter
+  - ValueArray<ThreadState*> \n threadStates
 }
 
-NamedObject <|-- IndexReader
+IndexWriter o-right-> DocumentsWriter
+
+Class ThreadState {
+  - ValueArray<FieldData*> \n fieldDataArray
+  + FieldsWriter* localFieldsWriter
+}
+
+DocumentsWriter o-right-> ThreadState
+
+Class FieldData {
+  - ThreadState* threadState       
+  + void processField()
+  + void invertField()
+}
+
+ThreadState o-right-> FieldData
+
+Class FieldsWriter {
+  + void writeField()
+}
+
+ThreadState o-up-> FieldsWriter
 
 @enduml

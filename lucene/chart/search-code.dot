@@ -1,0 +1,12 @@
+digraph search {
+  node [shape=plaintext, width=.6, height=.1]
+  dr [label=<<FONT COLOR="#d73027">Directory </FONT> dir = FSDirectory.open(new File("./index"))>]
+  is [label=<IndexSearcher searcher = new  <FONT COLOR="#d73027">IndexSearcher</FONT>(dir)>]
+  dr -> is
+  t [label=<Term t = new <FONT COLOR="#d73027">Term</FONT>("subject", "ant")>]
+  q [label=<<FONT COLOR="#d73027">Query </FONT> query = new TermQuery(t)>]
+  td [label=<<FONT COLOR="#d73027">TopDocs </FONT> docs = searcher.search(query, 10)>]
+  t -> q
+  q -> td
+  is -> td  
+}
