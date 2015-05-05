@@ -39,8 +39,10 @@
 |  20 | [[https://leetcode.com/problems/valid-parentheses/][Valid Parentheses]]              |      | 2015-04-15 | Easy       | Stack, String     | 栈               |
 |  21 | [[https://leetcode.com/problems/merge-two-sorted-lists/][Merge Two Sorted Lists]]         |      | 2015-04-16 | Easy       | Linked List       | 归并             |
 |  22 | [[https://leetcode.com/problems/generate-parentheses/][Generate Parentheses]]           |      | 2015-04-17 | Medium     | Vector, String    | 递归             |
+|  23 | [[https://leetcode.com/problems/merge-k-sorted-lists/][Merge k Sorted Lists]]           |      | 2015-04-17 | Hard       | Linked List       | 归并，优化       |
+|  24 | [[https://leetcode.com/problems/swap-nodes-in-pairs/][Swap Nodes in Pairs]]            |      | 2015-04-17 | Medium     | Linked List       | 循环             |
+|  25 | [[https://leetcode.com/problems/reverse-nodes-in-k-group/][Reverse Nodes in k-Group]]       |      | 2015-05-05 | Hard       | Linked List       | 递归，细节       |
 |     |                                |      |            |            |                   |                  |
-
 
 
 
