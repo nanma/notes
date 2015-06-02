@@ -15,35 +15,136 @@
 #+HTML_LINK_UP: ./leetcode.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/emacs.css" />
 
-| No. | Title                          | Note |       Date | Difficulty | Data Structure    | Algorithm        |
-|-----+--------------------------------+------+------------+------------+-------------------+------------------|
-|   1 | [[https://oj.leetcode.com/problems/two-sum/][Two Sum]]                        | [[./two-sum.html][HTML]] | 2014-12-12 | Medium     | Array, Hash table | Sort             |
-|   2 | [[https://leetcode.com/problems/add-two-numbers/][Add Two Numbers]]                | [[./add-two-numbers.html][HTML]] | 2015-04-02 | Easy       | Linked list       |                  |
-|   3 | [[https://leetcode.com/problems/longest-substring-without-repeating-characters/][Longest Substring]]              | [[./https://leetcode.com/problems/longest-substring-without-repeating-characters/][HTML]] | 2015-04-02 | Medium     | Array             | Greedy Algorithm |
-|   4 | [[https://leetcode.com/problems/median-of-two-sorted-arrays/][Median of Two Sorted Arrays]]    | [[./median-of-two-sorted-arrays.html][HTML]] | 2015-04-02 | Hard       | Array             | Binary sort      |
-|   5 | [[https://leetcode.com/problems/longest-palindromic-substring/][Longest Palindromic Substring]]  |      | 2015-04-03 | Medium     | String            | DP               |
-|   6 | [[https://leetcode.com/problems/zigzag-conversion/][ZigZag Conversion]]              |      | 2015-04-07 | Easy       | String            | 规律             |
-|   7 | [[https://leetcode.com/problems/reverse-integer/][Reverse Integer]]                |      | 2015-04-07 | Easy       |                   | 溢出判断         |
-|   8 | [[https://leetcode.com/problems/string-to-integer-atoi/][String to Integer]]              |      | 2015-04-07 | Easy       | String            | 多种输入         |
-|   9 | [[https://leetcode.com/problems/palindrome-number/][Palindrome Number]]              |      | 2015-04-08 | Easy       | Number            | 模运算           |
-|  10 | [[https://leetcode.com/problems/regular-expression-matching/][Regular Expression Matching]]    |      | 2015-04-08 | Hard       | String            |                  |
-|  11 | [[https://leetcode.com/problems/container-with-most-water/][Container With Most Water]]      |      | 2015-04-09 | Medium     |                   | 贪心？           |
-|  12 | [[https://leetcode.com/problems/integer-to-roman/][Integer to Roman]]               |      | 2015-04-13 | Medium     | String, Array     | 规律             |
-|  13 | [[https://leetcode.com/problems/roman-to-integer/][Roman to Integer]]               |      | 2015-04-13 | Easy       | String, Array     | 规律             |
-|  14 | [[https://leetcode.com/problems/longest-common-prefix/][Longest Common Prefix]]          |      | 2015-04-13 | Easy       | String, Array     |                  |
-|  15 | [[https://oj.leetcode.com/problems/3sum/][3Sum]]                           |      | 2015-04-14 | Medium     | Vector            | 二分查找，排序   |
-|  16 | [[https://leetcode.com/problems/3sum-closest/][3Sum Closest]]                   |      | 2015-04-14 | Medium     | Vector, Array     | 排序             |
-|  17 | [[https://leetcode.com/problems/letter-combinations-of-a-phone-number/][Letter Combinations of a Phone]] |      | 2015-04-14 | Medium     | Vector            | 递归             |
-|  18 | [[https://leetcode.com/problems/4sum/][4Sum]]                           |      | 2015-04-15 | Medium     | Vector, Array     | 排序，双指针移动 |
-|  19 | [[https://leetcode.com/problems/remove-nth-node-from-end-of-list/][Remove Nth Node]]                |      | 2015-04-15 | Easy       | Linked List       | 快慢指针         |
-|  20 | [[https://leetcode.com/problems/valid-parentheses/][Valid Parentheses]]              |      | 2015-04-15 | Easy       | Stack, String     | 栈               |
-|  21 | [[https://leetcode.com/problems/merge-two-sorted-lists/][Merge Two Sorted Lists]]         |      | 2015-04-16 | Easy       | Linked List       | 归并             |
-|  22 | [[https://leetcode.com/problems/generate-parentheses/][Generate Parentheses]]           |      | 2015-04-17 | Medium     | Vector, String    | 递归             |
-|  23 | [[https://leetcode.com/problems/merge-k-sorted-lists/][Merge k Sorted Lists]]           |      | 2015-04-17 | Hard       | Linked List       | 归并，优化       |
-|  24 | [[https://leetcode.com/problems/swap-nodes-in-pairs/][Swap Nodes in Pairs]]            |      | 2015-04-17 | Medium     | Linked List       | 循环             |
-|  25 | [[https://leetcode.com/problems/reverse-nodes-in-k-group/][Reverse Nodes in k-Group]]       |      | 2015-05-05 | Hard       | Linked List       | 递归，细节       |
-|     |                                |      |            |            |                   |                  |
-
-
-
-| 136 | [[https://oj.leetcode.com/problems/single-number/][Single Number]]     | [[./single-number.html][HTML]] | 2014-12-12 | Medium     | Bit, Hash table   | Bit              |
+| No. | Title                           | Note |       Date | Difficulty | Data Structure    | Algorithm         |
+|-----+---------------------------------+------+------------+------------+-------------------+-------------------|
+|   1 | [[https://oj.leetcode.com/problems/two-sum/][Two Sum]]                         | [[./two-sum.html][HTML]] | 2014-12-12 | Medium     | Array, Hash table | Sort              |
+|   2 | [[https://leetcode.com/problems/add-two-numbers/][Add Two Numbers]]                 | [[./add-two-numbers.html][HTML]] | 2015-04-02 | Easy       | Linked list       |                   |
+|   3 | [[https://leetcode.com/problems/longest-substring-without-repeating-characters/][Longest Substring]]               | [[./https://leetcode.com/problems/longest-substring-without-repeating-characters/][HTML]] | 2015-04-02 | Medium     | Array             | Greedy Algorithm  |
+|   4 | [[https://leetcode.com/problems/median-of-two-sorted-arrays/][Median of Two Sorted Arrays]]     | [[./median-of-two-sorted-arrays.html][HTML]] | 2015-04-02 | Hard       | Array             | Binary sort       |
+|   5 | [[https://leetcode.com/problems/longest-palindromic-substring/][Longest Palindromic Substring]]   |      | 2015-04-03 | Medium     | String            | DP                |
+|   6 | [[https://leetcode.com/problems/zigzag-conversion/][ZigZag Conversion]]               |      | 2015-04-07 | Easy       | String            | 规律              |
+|   7 | [[https://leetcode.com/problems/reverse-integer/][Reverse Integer]]                 |      | 2015-04-07 | Easy       |                   | 溢出判断          |
+|   8 | [[https://leetcode.com/problems/string-to-integer-atoi/][String to Integer]]               |      | 2015-04-07 | Easy       | String            | 多种输入          |
+|   9 | [[https://leetcode.com/problems/palindrome-number/][Palindrome Number]]               |      | 2015-04-08 | Easy       | Number            | 模运算            |
+|  10 | [[https://leetcode.com/problems/regular-expression-matching/][Regular Expression Matching]]     |      | 2015-04-08 | Hard       | String            |                   |
+|  11 | [[https://leetcode.com/problems/container-with-most-water/][Container With Most Water]]       |      | 2015-04-09 | Medium     |                   | 贪心？            |
+|  12 | [[https://leetcode.com/problems/integer-to-roman/][Integer to Roman]]                |      | 2015-04-13 | Medium     | String, Array     | 规律              |
+|  13 | [[https://leetcode.com/problems/roman-to-integer/][Roman to Integer]]                |      | 2015-04-13 | Easy       | String, Array     | 规律              |
+|  14 | [[https://leetcode.com/problems/longest-common-prefix/][Longest Common Prefix]]           |      | 2015-04-13 | Easy       | String, Array     |                   |
+|  15 | [[https://oj.leetcode.com/problems/3sum/][3Sum]]                            |      | 2015-04-14 | Medium     | Vector            | 二分查找，排序    |
+|  16 | [[https://leetcode.com/problems/3sum-closest/][3Sum Closest]]                    |      | 2015-04-14 | Medium     | Vector, Array     | 排序              |
+|  17 | [[https://leetcode.com/problems/letter-combinations-of-a-phone-number/][Letter Combinations of a Phone]]  |      | 2015-04-14 | Medium     | Vector            | 递归              |
+|  18 | [[https://leetcode.com/problems/4sum/][4Sum]]                            |      | 2015-04-15 | Medium     | Vector, Array     | 排序，双指针移动  |
+|  19 | [[https://leetcode.com/problems/remove-nth-node-from-end-of-list/][Remove Nth Node]]                 |      | 2015-04-15 | Easy       | Linked List       | 快慢指针          |
+|  20 | [[https://leetcode.com/problems/valid-parentheses/][Valid Parentheses]]               |      | 2015-04-15 | Easy       | Stack, String     | 栈                |
+|  21 | [[https://leetcode.com/problems/merge-two-sorted-lists/][Merge Two Sorted Lists]]          |      | 2015-04-16 | Easy       | Linked List       | 归并              |
+|  22 | [[https://leetcode.com/problems/generate-parentheses/][Generate Parentheses]]            |      | 2015-04-17 | Medium     | Vector, String    | 递归              |
+|  23 | [[https://leetcode.com/problems/merge-k-sorted-lists/][Merge k Sorted Lists]]            |      | 2015-04-17 | Hard       | Linked List       | 归并，优化        |
+|  24 | [[https://leetcode.com/problems/swap-nodes-in-pairs/][Swap Nodes in Pairs]]             |      | 2015-04-17 | Medium     | Linked List       | 循环              |
+|  25 | [[https://leetcode.com/problems/reverse-nodes-in-k-group/][Reverse Nodes in k-Group]]        |      | 2015-05-05 | Hard       | Linked List       | 递归，细节        |
+|  26 | [[https://leetcode.com/problems/remove-duplicates-from-sorted-array/][RemoveDuplicatesfromSortedArray]] |      | 2015-05-05 | Easy       | Array             | 技巧              |
+|  27 | [[https://leetcode.com/problems/remove-element/][Remove Element]]                  |      | 2015-05-05 | Easy       | Array             | 技巧              |
+|  28 | [[https://leetcode.com/problems/implement-strstr/][Implement strStr]]                |      | 2015-05-05 | Easy       | String            | 暴力              |
+|  29 | [[https://leetcode.com/problems/divide-two-integers/][Divide Two Integers]]             |      | 2015-05-05 | Medium     | Number            | 位操作            |
+|  30 | [[https://leetcode.com/problems/substring-with-concatenation-of-all-words/][Substring with Concatenation]]    |      | 2015-05-06 | Hard       | String, Map       | 技巧，细节        |
+|  31 | [[https://leetcode.com/problems/next-permutation/][Next Permutation]]                |      | 2015-05-06 | Medium     | Array             | 技巧              |
+|  32 | [[https://leetcode.com/problems/longest-valid-parentheses/][Longest Valid Parentheses]]       |      | 2015-05-06 | Hard       | String, Stack     | 规律              |
+|  33 | [[https://leetcode.com/problems/search-in-rotated-sorted-array/][Search in Rotated Sorted Array]]  |      | 2015-05-06 | Hard       | Array             | 二分查找          |
+|  34 | [[https://leetcode.com/problems/search-for-a-range/][Search for a Range]]              |      | 2015-05-06 | Medium     | Array             | 二分查找          |
+|  35 | [[https://leetcode.com/problems/search-insert-position/][Search Insert Position]]          |      | 2015-05-06 | Medium     | Array             | 二分查找          |
+|  36 | [[https://leetcode.com/problems/valid-sudoku/][Valid Sudoku]]                    |      | 2015-05-06 | Easy       | Array             | 细节              |
+|  37 | [[https://leetcode.com/problems/sudoku-solver/][Sudoku Solver]]                   |      | 2015-05-07 | Hard       | Array             | DFS，类似8皇后    |
+|  38 | [[https://leetcode.com/problems/count-and-say/][Count and Say]]                   |      | 2015-05-07 | Easy       | String            | 细节              |
+|  39 | [[https://leetcode.com/problems/combination-sum/][Combination Sum]]                 |      | 2015-05-07 | Medium     | Array             | DFS，剪枝         |
+|  40 | [[https://leetcode.com/problems/combination-sum-ii/][Combination Sum II]]              |      | 2015-05-07 | Medium     | Array             | 类似39，消重      |
+|  41 | [[https://leetcode.com/problems/first-missing-positive/][First Missing Positive]]          |      | 2015-05-08 | Hard       | Array             | swap              |
+|  42 | [[https://leetcode.com/problems/trapping-rain-water/][Trapping Rain Water]]             |      | 2015-05-08 | Hard       | Array             | 规律              |
+|  43 | [[https://leetcode.com/problems/multiply-strings/][Multiply Strings]]                |      | 2015-05-08 | Medium     | String, Array     | 细节实现，大整数  |
+|  44 | [[https://leetcode.com/problems/wildcard-matching/][Wildcard Matching]]               |      | 2015-05-08 | Hard       | String            | 正则匹配          |
+|  45 | [[https://leetcode.com/problems/jump-game-ii/][Jump Game II]]                    |      | 2015-05-12 | Hard       | Array             | 贪心法            |
+|  46 | [[https://leetcode.com/problems/permutations/][Permutations]]                    |      | 2015-05-12 | Medium     | Array             | 递归              |
+|  47 | [[https://leetcode.com/problems/permutations-ii/][Permutations II]]                 |      | 2015-05-12 | Hard       | Array             | 递归，技巧        |
+|  48 | [[https://leetcode.com/problems/rotate-image/][Rotate Image]]                    |      | 2015-05-12 | Medium     | Array             | 模拟；规律        |
+|  49 | [[https://leetcode.com/problems/anagrams/][Anagrams]]                        |      | 2015-05-12 | Medium     | String, Map       | 细节              |
+|  50 | [[https://leetcode.com/problems/powx-n/][Pow(x, n)]]                       |      | 2015-05-12 | Medium     | Number            | 分治，递归/非递归 |
+|  51 | [[https://leetcode.com/problems/n-queens/][N-Queens]]                        |      | 2015-05-12 | Hard       | Array             | dfs, 递归         |
+|  52 | [[https://leetcode.com/problems/n-queens-ii/][N-Queens II]]                     |      | 2015-05-12 | Hard       | Array             | dfs, 递归         |
+|  53 | [[https://leetcode.com/problems/maximum-subarray/][Maximum Subarray]]                |      | 2015-05-13 | Medium     | Array             | dp                |
+|  54 | [[https://leetcode.com/problems/spiral-matrix/][Spiral Matrix]]                   |      | 2015-05-13 | Medium     | Array             | 细节              |
+|  55 | [[https://leetcode.com/problems/jump-game/][Jump Game]]                       |      | 2015-05-13 | Medium     | Array             | 贪心，dp          |
+|  56 | [[https://leetcode.com/problems/merge-intervals/][Merge Intervals]]                 |      | 2015-05-13 | Hard       | Array             | 细节              |
+|  57 | [[https://leetcode.com/problems/insert-interval/][Insert Interval]]                 |      | 2015-05-13 | Hard       | Array             | 细节，排序        |
+|  58 | [[https://leetcode.com/problems/length-of-last-word/][Length of Last Word]]             |      | 2015-05-13 | Easy       | String            | 细节              |
+|  59 | [[https://leetcode.com/problems/spiral-matrix-ii/][Spiral Matrix II]]                |      | 2015-05-13 | Medium     | Array             | 细节              |
+|  60 | [[https://leetcode.com/problems/permutation-sequence/][Permutation Sequence]]            |      | 2015-05-13 | Medium     | String            | 规律，细节        |
+|  61 | [[https://leetcode.com/problems/rotate-list/][Rotate List]]                     |      | 2015-05-13 | Medium     | Linked List       | 细节              |
+|  62 | [[https://leetcode.com/problems/unique-paths/][Unique Paths]]                    |      | 2015-05-13 | Medium     | Array             | dp                |
+|  63 | [[https://leetcode.com/problems/unique-paths-ii/][Unique Paths II]]                 |      | 2015-05-13 | Medium     | Array             | dp                |
+|  64 | [[https://leetcode.com/problems/minimum-path-sum/][Minimum Path Sum]]                |      | 2015-05-13 | Medium     | Array             | dp                |
+|  65 | [[https://leetcode.com/problems/valid-number/][Valid Number]]                    |      | 2015-05-14 | Hard       | String            | 字符串，细节      |
+|  66 | [[https://leetcode.com/problems/plus-one/][Plus One]]                        |      | 2015-05-14 | Easy       | Array             | 细节              |
+|  67 | [[https://leetcode.com/problems/add-binary/][Add Binary]]                      |      | 2015-05-14 | Easy       | String            | 细节              |
+|  68 | [[https://leetcode.com/problems/text-justification/][Text Justification]]              |      | 2015-05-14 | Hard       | String            | 字符串，细节      |
+|  69 | [[https://leetcode.com/problems/sqrtx/][Sqrt(x)]]                         |      | 2015-05-14 | Medium     | Number            | 二分，细节        |
+|  70 | [[https://leetcode.com/problems/climbing-stairs/][Climbing Stairs]]                 |      | 2015-05-14 | Easy       | Array             | 规律              |
+|  71 | [[https://leetcode.com/problems/simplify-path/][Simplify Path]]                   |      | 2015-05-14 | Medium     | String            | 技巧              |
+|  72 | [[https://leetcode.com/problems/edit-distance/][Edit Distance]]                   |      | 2015-05-15 | Hard       | String            | dp                |
+|  73 | [[https://leetcode.com/problems/set-matrix-zeroes/][Set Matrix Zeroes]]               |      | 2015-05-15 | Medium     | Array             | 技巧              |
+|  74 | [[https://leetcode.com/problems/search-a-2d-matrix/][Search a 2D Matrix]]              |      | 2015-05-15 | Medium     | Array             | 二分查找          |
+|  75 | [[https://leetcode.com/problems/sort-colors/][Sort Colors]]                     |      | 2015-05-15 | Medium     | Array             | 技巧              |
+|  76 | [[https://leetcode.com/problems/minimum-window-substring/][Minimum Window Substring]]        |      | 2015-05-18 | Hard       | String            | 细节              |
+|  77 | [[https://leetcode.com/problems/combinations/][Combinations]]                    |      | 2015-05-18 | Medium     | Array             | 技巧              |
+|  78 | [[https://leetcode.com/problems/subsets/][Subsets]]                         |      | 2015-05-18 | Medium     | Array             | 技巧              |
+|  79 | [[https://leetcode.com/problems/word-search/][Word Search]]                     |      | 2015-05-18 | Medium     | Array             | dfs               |
+|  80 | [[https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/][RemoveDuplicatesfromSortedII]]    |      | 2015-05-18 | Medium     | Array             | 细节              |
+|  81 | [[https://leetcode.com/problems/search-in-rotated-sorted-array-ii/][Search in Rotated Sorted II]]     |      | 2015-05-19 | Medium     | Array             | 二分              |
+|  82 | [[https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/][Remove Duplicates from SortedII]] |      | 2015-05-19 | Medium     | Linked List       | 细节              |
+|  83 | [[https://leetcode.com/problems/remove-duplicates-from-sorted-list/][Remove Duplicates from Sorted]]   |      | 2015-05-19 | Easy       | Linked List       | 细节              |
+|  84 | [[https://leetcode.com/problems/largest-rectangle-in-histogram/][Largest Rectangle]]               |      | 2015-05-19 | Hard       | Array, Stack      | 技巧              |
+|  85 | [[https://leetcode.com/problems/maximal-rectangle/][Maximal Rectangle ]]              |      | 2015-05-19 | Hard       | Array             | 机器/dp           |
+|  86 | [[https://leetcode.com/problems/partition-list/][Partition List]]                  |      | 2015-05-20 | Medium     | Linked List       | 技巧              |
+|  87 | [[https://leetcode.com/problems/scramble-string/][Scramble String]]                 |      | 2015-05-20 | Hard       | String            | 递归，剪枝/dp     |
+|  88 | [[https://leetcode.com/problems/merge-sorted-array/][Merge Sorted Array]]              |      | 2015-05-20 | Easy       | Array             | 技巧              |
+|  89 | [[https://leetcode.com/problems/gray-code/][Gray Code]]                       |      | 2015-05-20 | Medium     | Number            | 技巧              |
+|  90 | [[https://leetcode.com/problems/subsets-ii/][Subsets II]]                      |      | 2015-05-20 | Medium     | Array             | 技巧              |
+|  91 | [[https://leetcode.com/problems/decode-ways/][Decode Ways]]                     |      | 2015-05-20 | Medium     | Array             | dp                |
+|  92 | [[https://leetcode.com/problems/reverse-linked-list-ii/][Reverse Linked List II]]          |      | 2015-05-21 | Medium     | Linked List       | 细节              |
+|  93 | [[https://leetcode.com/problems/restore-ip-addresses/][Restore IP Addresses]]            |      | 2015-05-21 | Medium     | String            | dfs               |
+|  94 | [[https://leetcode.com/problems/binary-tree-inorder-traversal/][Binary Tree Inorder Traversal]]   |      | 2015-05-21 | Medium     | Tree              | 细节              |
+|  95 | [[https://leetcode.com/problems/unique-binary-search-trees-ii/][Unique Binary Search Trees II]]   |      | 2015-05-21 | Medium     | Tree              | 递归/规律         |
+|  96 | [[https://leetcode.com/problems/unique-binary-search-trees/][Unique Binary Search Trees]]      |      | 2015-05-21 | Medium     | Tree              | dp/规律           |
+|  97 | [[https://leetcode.com/problems/interleaving-string/][Interleaving String]]             |      | 2015-05-21 | Hard       | String            | dp                |
+|  98 | [[https://leetcode.com/problems/validate-binary-search-tree/][Validate Binary Search Tree]]     |      | 2015-05-21 | Medium     | Tree              | 递归              |
+|  99 | [[https://leetcode.com/problems/recover-binary-search-tree/][Recover Binary Search Tree]]      |      | 2015-05-26 | Hard       | Tree              | 技巧              |
+| 100 | [[https://leetcode.com/problems/same-tree/][Same Tree]]                       |      | 2015-05-26 | Easy       | Tree              |                   |
+| 101 | [[https://leetcode.com/problems/symmetric-tree/][Symmetric Tree]]                  |      | 2015-05-26 | Easy       | Tree              |                   |
+| 102 | [[https://leetcode.com/problems/binary-tree-level-order-traversal/][Binary Tree Level Order]]         |      | 2015-05-26 | Easy       | Tree              |                   |
+| 103 | [[https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/][Binary Tree Zigzag]]              |      | 2015-05-26 | Medium     | Tree              |                   |
+| 104 | [[https://leetcode.com/problems/maximum-depth-of-binary-tree/][Maximum Depth of Binary Tree]]    |      | 2015-05-26 | Easy       | Tree              |                   |
+| 105 | [[https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/][Construct Binary Tree]]           |      | 2015-05-26 | Medium     | Tree              |                   |
+| 106 | [[https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/][Construct Binary Tree]]           |      | 2015-05-26 | Medium     | Tree              |                   |
+| 107 | [[https://leetcode.com/problems/binary-tree-level-order-traversal-ii/][Binary Tree Level Order II]]      |      | 2015-05-26 | Easy       | Tree              |                   |
+| 108 | [[https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/][Convert Sorted Array]]            |      | 2015-05-27 | Medium     | Tree              |                   |
+| 109 | [[https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/][Convert Sorted List]]             |      | 2015-05-27 | Medium     | Tree              |                   |
+| 110 | [[https://leetcode.com/problems/balanced-binary-tree/][Balanced Binary Tree]]            |      | 2015-05-27 | Easy       | Tree              |                   |
+| 111 | [[https://leetcode.com/problems/minimum-depth-of-binary-tree/][Minimum Depth of Binary Tree]]    |      | 2015-05-27 | Easy       | Tree              |                   |
+| 112 | [[https://leetcode.com/problems/path-sum/][Path Sum]]                        |      | 2015-05-27 | Easy       | Tree              |                   |
+| 113 | [[https://leetcode.com/problems/path-sum-ii/][Path Sum II]]                     |      | 2015-05-27 | Medium     | Tree              |                   |
+| 114 | [[https://leetcode.com/problems/flatten-binary-tree-to-linked-list/][Flatten Binary Tree]]             |      | 2015-05-27 | Medium     | Tree              |                   |
+| 115 | [[https://leetcode.com/problems/distinct-subsequences/][Distinct Subsequences]]           |      | 2015-05-27 | Hard       | Array             | dp                |
+| 116 | [[https://leetcode.com/problems/populating-next-right-pointers-in-each-node/][Populating Next Right]]           |      | 2015-05-27 | Medium     | Tree              | 技巧              |
+| 117 | [[https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/][Populating Next Right II]]        |      | 2015-05-27 | Hard       | Tree              | 技巧              |
+| 118 | [[https://leetcode.com/problems/pascals-triangle/][Pascal's Triangle]]               |      | 2015-05-27 | Easy       | Array             | 规律              |
+| 119 | [[https://leetcode.com/problems/pascals-triangle-ii/][Pascal's Triangle II]]            |      | 2015-05-27 | Easy       | Array             | 规律              |
+| 120 | [[https://leetcode.com/problems/triangle/][Triangle]]                        |      | 2015-05-27 | Medium     | Array             | dp                |
+| 121 | [[https://leetcode.com/problems/best-time-to-buy-and-sell-stock/][Stock I]]                         |      | 2015-05-27 | Medium     | Array             | 贪心              |
+| 122 | [[https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/][Stock II]]                        |      | 2015-05-27 | Medium     | Array             | 贪心/规律         |
+| 123 | [[https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/][Stock III]]                       |      | 2015-05-29 | Hard       | Array             | dp                |
+| 124 | [[https://leetcode.com/problems/binary-tree-maximum-path-sum/][Binary Tree Maximum Path Sum]]    |      | 2015-05-29 | Hard       | Tree              | 技巧              |
+| 125 | [[https://leetcode.com/problems/valid-palindrome/][Valid Palindrome]]                |      | 2015-05-29 | Easy       | String            |                   |
+| 126 | [[https://leetcode.com/problems/word-ladder-ii/][Word Ladder II]]                  |      | 2015-05-29 | Hard       | String, Map       | dfs               |
+| 127 | [[https://leetcode.com/problems/word-ladder/][Word Ladder]]                     |      | 2015-05-29 | Medium     | String, Map       | 细节，技巧        |
+| 128 | [[https://leetcode.com/problems/longest-consecutive-sequence/][Longest Consecutive Sequence]]    |      | 2015-05-29 | Medium     | Map, Array        | 技巧              |
+| 129 | [[https://leetcode.com/problems/sum-root-to-leaf-numbers/][Sum Root to Leaf Numbers]]        |      | 2015-05-29 | Easy       | Tree              |                   |
+|                                 |      |            |            |                   |                   |
+| 136 | [[https://oj.leetcode.com/problems/single-number/][Single Number]]                   | [[./single-number.html][HTML]] | 2014-12-12 | Medium     | Bit, Hash table   | Bit               |
